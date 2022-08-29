@@ -1,0 +1,17 @@
+/* Common Transition Style */
+%transition{
+    transition: all linear .3s;
+}
+
+/* Common Transition Style */
+%section-shape{
+    background-image: url('../images/shapes/scratch-shape.png');
+    background-position: left calc(100% + 1px);
+    background-repeat: no-repeat;
+    background-size: 100% 94px;
+}
+
+/* Common Font-Awesome font-family Style */
+%font-awesome{
+    font-family: "Font Awesome 5 Free";
+}

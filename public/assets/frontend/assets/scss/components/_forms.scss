@@ -1,0 +1,93 @@
+.form{
+    $shadow-size: 0.3em;
+    position: relative;
+    padding: toRem(40);
+    @include mobile{
+        padding-left: toRem(20);
+        padding-right: toRem(20);
+    }
+    background-color: $color-cream;
+    border: 2px solid $color-green--dark;
+    box-shadow:
+        ($shadow-size * -1) $shadow-size 0 $color-secondary,
+        ($shadow-size * -1) $shadow-size 0 1px $color-black;
+    
+    &-control,
+    .custom-select
+    {
+        color: $color-green--dark;
+        border: 2px solid $color-green--dark;
+        border-radius: 0;
+        min-height: toRem(50);
+        box-shadow: none !important;
+        &:focus{
+            border-color: $color-primary;
+        }
+    }
+    &-control{
+        min-height: toRem(50);
+        caret-color: $color-primary;
+        &::placeholder{
+            color: $color-green--dark;
+            text-shadow: none;
+        }
+    }
+    &-group{
+        .error-message{
+            font-size: toEm(14);
+            border-top: 0;
+        }
+    }
+
+    &-footer{
+        padding-top: toRem(40);
+        @include mobile{
+            padding-top: toRem(30);
+        }
+        &__text{
+            font-size: toRem(14);
+            margin-bottom: 0;
+        }
+        &__link{
+            text-decoration: underline 2px $color-primary;
+        }
+    }
+
+    &__shape{
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+
+}
+
+.custom-select{
+    cursor: pointer;
+}
+
+.input-group{
+    &-append{
+        margin-left: -2px;
+    }
+    &-text{
+        color: $color-black;
+        border-radius: 0;
+        border-width: 2px;
+        border-color: $color-green--dark;
+        background-color: $color-white;
+        &:focus-visible,
+        &:active
+        {
+            color: $color-white;
+            background-color: $color-primary;
+        }
+    }
+}
+
+.error-message{
+    color: $color-white;
+    background-color: $color-danger;
+    border: 2px solid $color-green--dark;
+    padding: toRem(6) toRem(12);
+}

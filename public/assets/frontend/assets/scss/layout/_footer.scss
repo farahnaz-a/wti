@@ -1,0 +1,33 @@
+/* Footer Section Style */
+.footer{
+    border-top: 1px solid $color-green--dark;
+    background-color: $color-cream;
+    &__top{
+        padding-top: toRem(70);
+        padding-bottom: toRem(70);
+    }
+    &__bottom{
+        border-top: 1px solid $color-green--dark;
+    }
+    &-nav{
+        @include mobile{
+            flex-direction: column;
+            align-items: center;
+            .nav-item{
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    &__copyright{
+        color: $color-black;
+        font-size: toRem(14);
+        &__link{
+            &:hover,
+            &:focus{
+                color: $color-primary;
+                text-decoration: underline $color-green--dark;
+            }
+        }
+    }
+}

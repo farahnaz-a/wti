@@ -1,0 +1,299 @@
+/* Header Section Style */
+.header{
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	background-color: $color-white;
+	border-bottom: 1px solid $color-green--dark;
+	@extend %transition;
+	.navbar{
+		&-toggler{
+			position: relative;
+			width: toRem(40);
+			height: toRem(40);
+			padding: 0;
+			border: 0;
+			box-shadow: none;
+			&::before,
+			&::after
+			{
+				content: "";
+				position: absolute;
+				display: block;
+				top: 50%;
+				right: 0;
+				height: 3px;
+				background-color: $color-black;
+				transition:
+					transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+					width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+			&::before{
+				width: 100%;
+				transform: translateY(calc(-50% - 5px)) rotate(0);
+			}
+			&::after{
+				width: 60%;
+				transform: translateY(calc(50% + 5px)) rotate(0);
+			}
+
+			&[aria-expanded="true"],
+			&:active
+			{
+				&::after{
+					width: 100%;
+				}
+			}
+			@include hover{
+				&:hover,
+				&:focus-visible
+				{
+					&::after{
+						width: 100%;
+					}
+				}
+			}
+			&[aria-expanded="true"]{
+				&::before,
+				&::after{
+					background-color: $color-danger;
+				}
+				&::before{
+					transform: translateY(-50%) rotate(-45deg);
+				}
+				&::after{
+					transform: translateY(-50%) rotate(45deg);
+				}
+			}
+		}
+		&-collapse{
+			@include desktop{
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				transform: translateX(100%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				width: 50%;
+				min-height: 100vh;
+				padding: toRem(100) 0;
+				background-color: $color-white;
+				transition: transform ease-in-out .3s;
+				overflow-y: auto;
+				&.show{
+					transform: translateX(0);
+				}
+				.navbar-nav{
+					width: 100%;
+					margin-top: toRem(20);
+					.nav-item{
+						margin: 0.3rem 0.6rem;
+					}
+				}
+			}
+			@include tablet{
+				width: 100%;
+			}
+		}
+		.nav{
+			&-item{
+				.dropdown{
+					&-toggle{
+						width: 100%;
+						display: inline-flex;
+						align-items: center;
+						justify-content: center;
+						&__icon{
+							font-size: toRem(14);
+							transform: translateX(5px) translateY(2px);
+							line-height: 1;
+						}
+						&::after{
+							display: none;
+						}
+					}
+					&-menu{
+						top: calc(100% + 10px);
+						background-color: $color-white;
+						border-color: $color-green--dark;
+						border-radius: 0;
+						padding: 0;
+						box-shadow:
+							0.3em 0.3em 0 $color-secondary,
+							0.3em 0.3em 0 1px $color-black;
+						@include min-desktop{
+							transition: all linear .3s;
+							display: block;
+							transform: translateY(40%);
+							opacity: 0;
+							visibility: hidden;
+						}
+					}
+					&-item{
+						font-size: toRem(17);
+						&:not(:last-child){
+							border-bottom: 1px solid $color-black;
+						}
+						@extend %transition;
+						border-radius: 0;
+						&.active,
+						&:hover,
+						&:active,
+						&:focus-visible
+						{
+							color: $color-white;
+							background-color: $color-primary;
+						}
+					}
+				}
+				&.dropdown{
+					@include min-desktop{
+						&::before{
+							content: "";
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							transform: translateY(100%);
+							width: 100%;
+							height: 100%;
+							cursor: pointer;
+							pointer-events: none;
+						}
+						&:hover,
+						&:focus-within
+						{
+							.nav-link::before{
+								transform: translateX(-50%) rotate(45deg) scale(1);
+							}
+						}
+						&:hover,
+						&:focus-within,
+						&:focus
+						{
+							&::before{
+								pointer-events: all;
+							}
+							.dropdown-menu{
+								transform: translateY(0);
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+					}
+				}
+			}
+			&-link{
+				position: relative;
+				color: $color-black;
+				font-size: 1rem;
+				@include min-desktop{
+					font-size: toRem(18);
+				}
+				font-weight: 400;
+				font-family: $font-primary;
+				padding-left: toRem(15);
+				padding-right: toRem(15);
+				z-index: 1;
+				@extend %transition;
+				&::before{
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%) rotate(45deg) scale(0);
+					width: 5px;
+					height: 100%;
+					background-color: $color-secondary;
+					z-index: -1;
+					transition: transform .3s ease-in-out;
+				}
+				&:active,
+				&.active
+				{
+					&::before{
+						transform: translateX(-50%) rotate(45deg) scale(1);
+					}
+				}
+				@include hover{
+					&:hover,
+					&:focus-visible
+					{
+						&::before{
+							transform: translateX(-50%) rotate(45deg) scale(1);
+						}
+					}
+				}
+				&:focus ~ .dropdown-menu{
+					@include min-desktop{
+						transform: translateY(0);
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+		.action-nav{
+			@include min-desktop{
+				align-items: center;
+			}
+			@include desktop{
+				flex-direction: column;
+				justify-content: center;
+			}
+			.nav-item{
+				.btn{
+					font-size: toRem(14);
+				}
+				&:not(:last-child){
+					@include min-desktop{
+						margin-right: toRem(15);
+					}
+					@include desktop{
+						margin-bottom: toRem(15);
+					}
+				}
+			}
+		}
+	}
+	&--fixed{
+		position: fixed;
+		transform: translateY(-100%);
+		animation: header_in .4s linear forwards;
+	}
+}
+
+
+/* Fixed Header animation */
+@keyframes header_in{
+	0%{
+		transform: translateY(-100%);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
+/* Off Canvas Navbar Toggler */
+.offCanvasMenuCloser{
+	top: 0;
+	left: 0;
+	transform: translateX(100%);
+	width: 100%;
+	height: 100%;
+	background: rgba($color: #000000, $alpha: 0.5);
+	z-index: 8;
+	backdrop-filter: blur(5px);
+	display: none;
+	transition: opacity .4s ease .4s;
+	opacity: 0;
+	&.show{
+		transform: translateX(0);
+		opacity: 1;
+	}
+	@include tablet-to-desktop-lg{
+		display: block;
+	}
+}
