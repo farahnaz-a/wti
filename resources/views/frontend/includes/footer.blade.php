@@ -1,5 +1,5 @@
 <!-- Footer Section -->
-<footer class="footer border-top-0">
+<footer class="footer @yield('footer_border')">
     <div class="container">
         <div class="footer__top">
             <div class="row align-items-center">
@@ -31,22 +31,22 @@
                 <div class="col-lg-auto">
                     <ul class="social-nav justify-content-center justify-content-lg-start">
                         <li class="social-nav__item">
-                            <a href="#!" target="_blank" class="social-nav__item__link">
+                            <a href="https://www.facebook.com/webtraininginst" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="#!" target="_blank" class="social-nav__item__link">
+                            <a href="https://www.youtube.com/webtraininginstitute" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-youtube"></i>
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="#!" target="_blank" class="social-nav__item__link">
+                            <a href="tel:01868752464" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-whatsapp"></i>
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="mailto:demo@demo.com" class="social-nav__item__link">
+                            <a href="mailto:rajiurrahmanraj2021@gmail.com" class="social-nav__item__link">
                                 <i class="bi bi-envelope"></i>
                             </a>
                         </li>
@@ -73,7 +73,7 @@
 
 <!-- All Scripts -->
 <script src="{{ asset('assets/frontend/assets/js/jquery-1.12.4.min.js') }}"></script>
-<script src="{{ asset('assets/frontend/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/assets/js/script.js') }}"></script>
 <script>
     $(document).ready(function(){
@@ -81,6 +81,34 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
+        });
+
+
+        $('body').on('click', '#newsLetterButton', function(e){
+            e.preventDefault();
+            var email = $('#newsletterEmail').val();
+            $.ajax({
+                type : "post",
+                url  : "{{ route('home.newsletter.store') }}",
+                data : {
+                    email:email,
+                },
+                success : function(response){
+                   $('.newsLetterForm').trigger('reset');
+					$('.error-message').addClass('d-none');
+					$('.success-message').removeClass('d-none');
+					$('.success-message').html('<i class="bi bi-check-circle"></i>' +response);
+                },
+                error: function(errors){
+                    $('.success-message').addClass('d-none'); 
+					if(errors.responseJSON.errors['email']){
+						$('.emailError').removeClass('d-none');
+						$('#emailError').text(errors.responseJSON.errors['email']);
+					}else{
+						$('.emailError').addClass('d-none');
+					} 
+                }
+            })
         });
     });
 </script>

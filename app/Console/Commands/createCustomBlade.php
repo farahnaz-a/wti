@@ -31,6 +31,9 @@ class createCustomBlade extends Command
         $data = explode('.', $this->argument('name'));
         $fileName = array_pop($data);
         $main_path = implode('/', $data);
+        if (!File::isDirectory(resource_path('views/'.$main_path))) {
+            File::makeDirectory(resource_path('views/'.$main_path), 0777, true, true);
+        }
         $path = resource_path('views/frontend/layouts/template.html'); 
         $template_data = file_get_contents($path);  
         $path2 = resource_path('views/'.$main_path.'/'.$fileName.'.blade.php'); 

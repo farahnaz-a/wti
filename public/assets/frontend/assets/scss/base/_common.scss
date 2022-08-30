@@ -222,45 +222,6 @@ img{
 	}
 }
 
-/* Veno Box Style */
-.vbox{
-	&-close{
-		top: 2%;
-		right: 2%;
-		width: 4rem;
-		height: 4rem;
-		border-radius: 50%;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 3rem;
-		background: $color-primary !important;
-		color: $color-white !important;
-	}
-	&-preloader .sk{
-		&-child,
-		&-rect,
-		&-cube,
-		&-spinner,
-		&-rotating-plane{
-			background: $color-primary !important;
-		}
-	}
-	&-next,
-	&-prev{
-		width: 3rem;
-		height: 3rem;
-		span{
-			width: 2rem;
-			height: 2rem;
-			border-width: 4px;
-			border-top-color: $color-primary !important;
-			border-right-color: $color-primary !important;
-		}
-	}
-}
-
 /* Preloader Section Style */
 .preloader{
 	top: 0;
@@ -268,6 +229,7 @@ img{
 	z-index: 9999;
 }
 
+/* Marquee Section Style */
 .marquee{
 	display: flex;
     padding: 10px;
@@ -275,20 +237,17 @@ img{
     border-bottom: 2px solid $color-black;
     overflow: hidden;
 	&--primary{
-		// background-color: rgb(255, 199, 0);
 		color: $color-white;
 		background-color: $color-primary;
 	}
 	&--secondary{
 		color: $color-black;
-		background-color: $color-secondary;
+		background-color: $color-secondary--light;
 	}
 	&__line{
-		@include desktop{
-			font-size: toRem(32);
-		}
+		font-size: toRem(32);
 		@include min-desktop{
-			font-size: 2.6vw;
+			font-size: 2.4vw;
 		}
 		font-weight: 700;
 		line-height: 1.2;
@@ -297,7 +256,7 @@ img{
 		align-items: center;
 		white-space: nowrap;
 		user-select: none;
-		animation: 30s linear 0s infinite normal none running marquee;
+		animation: marquee 30s linear 0s infinite;
 		@keyframes marquee {
 			0%{
 				transform: translateX(0px);
@@ -305,6 +264,11 @@ img{
 			100%{
 				transform: translateX(-100%);
 			}
+		}
+
+		&__shape{
+			margin: 0 15px;
+			max-width: toRem(40);
 		}
 	}
 }
@@ -383,6 +347,55 @@ img{
 		}
 		&:not(:last-child){
 			margin-bottom: toRem(15);
+		}
+	}
+}
+
+/* Stripe Background Style */
+.background-stripe{
+	position: relative;
+	display: inline-block;
+	color: #121213;
+	margin: 0 0.2em;
+	z-index: 1;
+	font-family: $font-primary;
+	font-weight: 900;
+	&::before{
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 105%;
+		height: 105%;
+		border: 1px solid $color-black;
+		z-index: -1;
+	}
+	&--left{
+		&::before{	
+			transform-origin: left top;
+			transform: translate(-50%, -50%) rotate(1deg);
+		}
+	}
+	&--right{
+		&::before{	
+			transform-origin: right top;
+			transform: translate(-50%, -50%) rotate(-2deg);
+		}
+	}
+	&--primary{
+		&::before{
+			background-color: $color-primary--light;
+		}
+	}
+	&--secondary{
+		&::before{
+			background-color: $color-secondary--light;
+		}
+	}
+	&--danger{
+		color: $color-white;
+		&::before{
+			background-color: $color-danger;
 		}
 	}
 }
@@ -475,6 +488,34 @@ img{
 	}
 }
 
+/* Common Match Height Style */
+.match-height > [class*="col"] {
+	display: flex;
+	flex-flow: column;
+}
+.match-height > [class*="col"] > * {
+	flex: 1 1 auto;
+}
+
+/* Rating List Style */
+.rating-list{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 2px;
+    &__item{
+        &__icon{
+            color: $color-secondary;
+            font-size: toRem(30);
+			transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+			cursor: pointer;
+			&:hover{
+				transform: scale(1.1);
+			}
+        }
+    }
+}
+
 /* Common Navbar Style */
 .nav{
 	&-link{
@@ -522,7 +563,8 @@ img{
 	}
 	&__title{
 		font-size: toRem(40);
-		font-family: unset;
+		font-weight: 600;
+		font-family: $font-secondary;
 		@include tablet{
 			font-size: toRem(30);
 		}
@@ -703,6 +745,144 @@ img{
 					}
 					&--facebook{
 						background-color: $color-facebook;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Testimonial Section Style */
+.testimonial{
+	--columns: 1;
+	--gap: 2rem;
+	@include min-desktop{
+		--columns: 2;
+	}
+	background-color: $color-light-grayish-orange;
+	&-wrapper{
+		display: block;
+		columns: var(--columns);
+		gap: var(--gap);
+		@include min-desktop{
+			padding: 2rem;
+		}
+		max-width: 140rem;
+		margin: 0 auto;
+		> * {
+			break-inside: avoid;
+			margin-bottom: var(--gap);
+		}
+	}
+	&__block{
+		$shadow-size: 0.3em;
+		padding: 15px;
+		border: 2px solid $color-black;
+		@include min-tablet{
+			border-width: 4px;
+		}
+		background-color: $color-white;
+		&:nth-child(odd){
+			box-shadow:
+				($shadow-size * -1) $shadow-size 0 $color-primary,
+				($shadow-size * -1) $shadow-size 0 2px $color-black;
+			.testimonial__block__header__avatar::before{
+				background-color: $color-secondary;
+			}
+		}
+		&:nth-child(even){
+			box-shadow:
+				($shadow-size * -1) $shadow-size 0 $color-secondary,
+				($shadow-size * -1) $shadow-size 0 2px $color-black;
+				.testimonial__block__header__avatar::before{
+					background-color: $color-primary;
+				}
+		}
+		&__header{
+			@include min-mobile{
+				display: flex;
+			}
+			&__avatar{
+				position: relative;
+				width: toRem(50);
+				height: toRem(50);
+				border: 2px solid $color-black;
+				border-radius: 50%;
+				&__image{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+					font-size: 10px;
+					border-radius: inherit;
+					overflow: hidden;
+				}
+				&::before{
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					transform: translate(-10%, 10%) scale(1.1);
+					width: 100%;
+					height: 100%;
+					border-radius: inherit;
+					z-index: -1;
+				}
+			}
+			&__details{
+				@include mobile{
+					margin-top: toRem(20);
+				}
+				@include min-mobile{
+					margin-left: toRem(20);
+				}
+			}
+			&__title{
+				font-size: toRem(16);
+				font-weight: 600;
+			}
+			&__meta{
+				display: inline-flex;
+				align-items: center;
+				padding: 4px 10px;
+				border: 2px solid $color-black;
+				text-transform: capitalize;
+				font-size: toRem(11);
+				font-weight: 700;
+				color: $color-white !important;
+				&--youtube{
+					background-color: $color-youtube;
+				}
+				&--facebook{
+					background-color: $color-facebook
+				}
+				&__icon{
+					display: inline-block;
+					margin-left: 5px;
+					line-height: 0;
+					> {
+						line-height: 0;
+
+					}
+				}
+			}
+		}
+		&__body{
+			@include min-mobile{
+				padding-left: toRem(70);
+			}
+			padding-top: toRem(15);
+			font-size: toRem(14);
+			.rating-list{
+				margin-bottom: 15px;
+				&__item{
+					&__icon{
+						font-size: toRem(20);
 					}
 				}
 			}

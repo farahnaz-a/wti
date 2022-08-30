@@ -34,7 +34,7 @@
 @section('twitter_desciption') @endsection
 
 {{-- Menu Active --}}
-@section('active') @endsection
+@section('contactActive', 'active')
 
 {{-- Stye  --}}
 @push('css')
@@ -61,7 +61,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের একটি ইমেইল পাঠান</h3>
-								<a href="mailto:demo@demo.com" class="contact__list__item__text">demo@demo.com</a>
+								<a href="mailto:rajiurrahmanraj2021@gmail.com" class="contact__list__item__text">rajiurrahmanraj2021@gmail.com</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -70,7 +70,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফোন নাম্বার</h3>
-								<a href="tel:+012345678910" class="contact__list__item__text">012 3456 7891</a>
+								<a href="tel:01868752464" class="contact__list__item__text">018 6875 2464</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -79,7 +79,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের হোয়াটসঅ্যাপ নাম্বার</h3>
-								<a href="tel:+012345678910" class="contact__list__item__text">012 3456 7891</a>
+								<a href="tel:01868752464" class="contact__list__item__text">018 6875 2464</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -88,37 +88,46 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফেসবুক গ্রুপ</h3>
-								<a href="http://www.facebook.com/" target="_blank" class="contact__list__item__text">webtraininginstitute</a>
+								<a href="https://www.facebook.com/webtraininginst" target="_blank" class="contact__list__item__text">webtraininginstitute</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-5 col-lg-6 ml-auto">
-					<form action="#!" class="form">
+				<div class="col-xl-5 col-lg-6 ml-auto"> 
+					<form action="#!" class="form"> 
+						<div class="success-message success-message__contact d-none">  
+
+						</div>
 						<h3 class="form-group">আপনার তথ্য দিন</h3>
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<input type="text" name="name" class="form-control" placeholder="আপনার নাম *" required>
-									<div class="error-message">
-										<i class="bi bi-info-circle"></i> ঘরটি অবশ্যই পূরণ করতে হবে !
+									<input type="text" name="name" id="name" class="form-control" placeholder="আপনার নাম *" required> 
+									<div class="error-message error-message__contact  d-none nameError">
+										<i class="bi bi-info-circle"></i> <span id="nameError"></span>
 									</div>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<input type="email" name="email" class="form-control" placeholder="আপনার ইমেইল *" required>
+									<input type="email" name="email" id="email" class="form-control" placeholder="আপনার ইমেইল *" required>
+									<div class="error-message error-message__contact  d-none emailError">
+										<i class="bi bi-info-circle"></i> <span id="emailError"></span>
+									</div>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<input type="tel" name="phone" class="form-control" placeholder="আপনার ফোন নাম্বার *" required>
+									<input type="tel" name="phone" id="phone" class="form-control" placeholder="আপনার ফোন নাম্বার *" required>
+									<div class="error-message error-message__contact  d-none phoneError">
+										<i class="bi bi-info-circle"></i> <span id="phoneError"></span>
+									</div>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<select name="phone" class="custom-select">
-										<option disabled value="" selected>ক্যাটাগরি সিলেক্ট করুন</option>
+									<select name="category_id" id="category_id" class="custom-select">
+										<option disabled value="0" selected>ক্যাটাগরি সিলেক্ট করুন</option>
 										<option value="1">Technical</option>
 										<option value="2">Business</option>
 										<option value="3">Payment</option>
@@ -130,11 +139,11 @@
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<textarea name="details" rows="6" class="form-control" placeholder="বিস্তারিত লিখুন"></textarea>
+									<textarea name="message" id="message" rows="6" class="form-control" placeholder="বিস্তারিত লিখুন"></textarea>
 								</div>
 							</div>
 							<div class="col-12 text-center">
-								<button type="submit" class="btn btn--primary bubbles-animation bubbles-animation--primary">
+								<button type="button" id="sendMessage" class="btn btn--primary bubbles-animation bubbles-animation--primary">
 									সাবমিট
 									<i class="bi bi-send"></i>
 								</button>
@@ -150,6 +159,9 @@
 	<div class="faq section-gap pb-0">
 		<div class="container">
 			<div class="row">
+				<div class="col-12 section-header text-center">
+					<h1 class="section-header__title"><span class="background-stripe background-stripe--left background-stripe--primary">সচরাচর</span> জানতে চাওয়া <span class="background-stripe background-stripe--right background-stripe--secondary">প্রশ্নের উত্তর</span></h1>
+				</div>
 				<div class="col-12">
 					<div class="accordion" id="faqAccordionParent">
 						<div class="faq-card">
@@ -221,7 +233,7 @@
 					</div>
 				</div>
 				<div class="col-12 text-center pt-5">
-					<img src="./assets/images/illustrations/contact_us.png" alt="Contact Image" class="img-fluid">
+					<img src="{{ asset('assets/frontend/assets/images/illustrations/contact_us.png') }}" alt="Contact Image" class="img-fluid">
 				</div>
 			</div>
 		</div>
@@ -231,7 +243,103 @@
 @push('js')
 <script>
     $(document).ready(function(){
+		$('#sendMessage').click(function(e){
+            e.preventDefault();
+            var name             = $('#name');
+            var email            = $('#email');
+            var phone            = $('#phone');
+            var category         = $('#category_id');
+            var message			 = $('#message');
 
+			$.ajax({
+				type : "post",
+				url  : "{{ route('home.contact.store') }}",
+				data : {
+					name 		:name.val(),
+					email 		:email.val(),
+					phone 		:phone.val(),
+					category 	:category.val(),
+					message 	:message.val(),
+				}, 
+				success : function(response){
+					$('.form').trigger('reset');
+					$('.error-message__contact').addClass('d-none');
+					$('.success-message__contact').removeClass('d-none');
+					$('.success-message__contact').html('<i class="bi bi-check-circle"></i>' +response);
+					
+				},
+				error : function(errors){  
+					$('.success-message__contact').addClass('d-none');
+					if(errors.responseJSON.errors['name']){ 
+						$('.nameError').removeClass('d-none');
+						$('#nameError').text(errors.responseJSON.errors['name']);
+					}else{
+						$('.nameError').addClass('d-none');
+					}
+					if(errors.responseJSON.errors['email']){
+						$('.emailError').removeClass('d-none');
+						$('#emailError').text(errors.responseJSON.errors['email']);
+					}else{
+						$('.emailError').addClass('d-none');
+					}
+					if(errors.responseJSON.errors['phone']){
+						$('.phoneError').removeClass('d-none');
+						$('#phoneError').text(errors.responseJSON.errors['phone']);
+					}else{
+						$('.phoneError').addClass('d-none');
+					}
+				}
+			});
+
+
+            // var errors = [];
+            // var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+            // if(name.val() == ''){
+            //     $('#nameError').removeClass('d-none'); 
+            //     errors.push('name')   
+            // }else{ 
+            //     $('#nameError').addClass('d-none');
+            //     if(errors.indexOf('name')  != -1){ 
+            //         errors = errors.filter(item => item !== 'name') 
+            //     }
+            // } 
+            // if(phone.val() == ''){
+            //     $('#phoneError').removeClass('d-none');
+            //     errors.push('phone');
+            // }else{
+            //     if(phone.val().length > 15){
+            //         $('#phoneError').html('<i class="bi bi-info-circle"></i> ফোন নম্বর সর্বোচ্চ ১৫টি সংখ্যা হতে পারবে !');
+            //         $('#phoneError').removeClass('d-none');
+            //         errors.push('phone');
+            //     }else{
+
+            //         $('#phoneError').addClass('d-none');
+            //         if(errors.indexOf('phone')  != -1){ 
+            //             errors = errors.filter(item => item !== 'phone') 
+            //         }
+            //     }
+            // }
+
+            // if(email.val() == ''){
+            //     $('#emailError').removeClass('d-none');
+            //     errors.push('email');
+            // }else{
+            //     if(!regex.test(email.val())){
+            //         $('#emailError').html('<i class="bi bi-info-circle"></i> আপনার ইমেইলটি সঠিক নয় !'); 
+            //         $('#emailError').removeClass('d-none'); 
+            //         errors.push('email');
+            //     }else{  
+			// 		if(errors.indexOf('email')  != -1){ 
+			// 			errors = errors.filter(item => item !== 'email') 
+			// 		}
+			// 		$('#emailError').addClass('d-none');  
+                   
+            //     }
+            // }             
+			// if(errors.length == 0){  
+			// 	$('.form').submit();
+			// } 
+        });
     });
 </script>
 @endpush

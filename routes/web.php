@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,18 @@ Route::middleware([
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home.index');
     Route::get('/contact', 'contact')->name('home.contact');  
+    Route::post('/contact/store', 'contactStore')->name('home.contact.store');
+    Route::post('/newsletter/store', 'newsletterStore')->name('home.newsletter.store');
     Route::post('/email/check', 'emailCheck')->name('email.check');
     Route::post('/register', 'register')->name('home.register');  
+});
+
+
+Route::controller(AdminController::class)->middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/subscriber/list', 'subscriberList')->name('admin.subscriber');
+    Route::post('subscriber/status/change', 'subscriberStatusChange')->name('subscriber.status.change');
+    Route::post('subscriber/destroy', 'subscriberDestroy')->name('subscriber.destroy');
+    Route::post('subscriber/mail/send', 'subscriberMailSend')->name('admin.subscriber.mail.send');
+    Route::get('/user/list', 'userList')->name('admin.user');
+    Route::post('user/staus/change', 'userStausChange')->name('user.staus.change');
 });

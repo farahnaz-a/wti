@@ -1,17 +1,16 @@
 (function ($) {
     "use strict"
 
-	/* Document on load functions */
+	/* Window on load functions */
 	$(window).on('load', function () {
         // preLoader();
 		headerHeightFixer();
 		dropdownAnimation();
     });
 
-	/* Document on Resize functions */
+	/* Window on Resize functions */
 	$(window).on('resize', function () {
 		headerHeightFixer();
-		dropdownAnimation();
     });
 
 	/* Preloader init */
@@ -57,11 +56,11 @@
 	function dropdownAnimation(){
 		if (window.matchMedia("(max-width: 991.98px)").matches) {
 			// Add slideDown animation to Bootstrap dropdown when expanding.
-			$('.dropdown').on('show.bs.dropdown', function() {
+			$('.header .dropdown').on('show.bs.dropdown', function() {
 				$(this).find('.dropdown-menu').first().stop(true, true).slideDown();
 			});
 			// Add slideUp animation to Bootstrap dropdown when collapsing.
-			$('.dropdown').on('hide.bs.dropdown', function() {
+			$('.header .dropdown').on('hide.bs.dropdown', function() {
 				$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
 			});
 		}
