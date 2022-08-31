@@ -70,7 +70,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফোন নাম্বার</h3>
-								<a href="tel:01868752464" class="contact__list__item__text">018 6875 2464</a>
+								<a href="tel:01643390112" class="contact__list__item__text">016 4339 0112</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -79,7 +79,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের হোয়াটসঅ্যাপ নাম্বার</h3>
-								<a href="tel:01868752464" class="contact__list__item__text">018 6875 2464</a>
+								<a href="tel:01643390112" class="contact__list__item__text">016 4339 0112</a>
 							</div>
 						</div>
 						<div class="contact__list__item">

@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AdmissionMail;
+use App\Mail\RegisterMail;
+use App\Models\Admission;
 use App\Models\ContactMessage;
+use App\Models\Course;
 use App\Models\Subscriber;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -73,12 +78,80 @@ class HomeController extends Controller
             'phone' => $request->phone,
             'password' => bcrypt($request->password),
         ]);
+        
+        Mail::to($request->email)->send(new RegisterMail($request->email, $request->password));
+
         Auth::attempt([
             'email' => $request->email,
             'password' => $request->password,
         ]); 
 
-        return to_route('home.index');
+        return to_route('dashboard');
+    }
+
+    // Admission Page 
+    public function adminssion(){
+        $courses = Course::where('status', 'active')->get();
+        return view('frontend.admission', compact('courses'));
+    }
+
+    // Admission store 
+    public function admissionStore(Request $request){
+        $request->validate([
+            'name'              => 'required',
+            'email'             => 'required|email',
+            'phone'             => 'required', 
+            'course_id'         => 'required', 
+            'course_type'       => 'required', 
+            'payment_method'    => 'required',  
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+        if(!$user){
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => bcrypt($request->phone),
+            ]);
+            Mail::to($request->email)->send(new RegisterMail($request->email, $request->phone));
+        }
+        
+        Auth::login($user);
+        $payment_method = '';
+        $payment_number = '';
+        $payment_trx_id = '';
+        if($request->payment_method == 'payment_method--bkash'){
+            $payment_method = 'bkash';
+            $payment_number = $request->bkash_number;
+            $payment_trx_id = $request->bkash_trxID;
+        }
+        if($request->payment_method == 'payment_method--rocket'){
+            $payment_method = 'rocket';
+            $payment_number = $request->rocket_number;
+            $payment_trx_id = $request->rocket_trxID;
+        }
+        if($request->payment_method == 'payment_method--nagad'){
+            $payment_method = 'nagad';
+            $payment_number = $request->nagad_number;
+            $payment_trx_id = $request->nagad_trxID;
+        }
+
+        Admission::Create([
+            'name'              => $request->name,
+            'email'             => $request->email,
+            'phone'             => $request->phone,
+            'course_id'         => $request->course_id,
+            'course_type'       => $request->course_type, 
+            'payment_method'    => $payment_method,
+            'payment_number'    => $payment_number,
+            'payment_trx_id'    => $payment_trx_id,
+        ]);
+
+        Mail::to($request->email)->send(new AdmissionMail());
+
+        return to_route('dashboard');
+
     }
 
 

@@ -36,6 +36,7 @@
         .error-message{
             font-size: toEm(14);
             border-top: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -85,9 +86,24 @@
     }
 }
 
+.success-message,
+.error-message
+{
+    text-align: left;
+}
+
+.success-message{
+    color: $color-white;
+    background-color: $color-primary;
+    border: 2px solid $color-green--dark;
+    padding: toRem(6) toRem(12);
+    margin-bottom: 1rem;
+}
+
 .error-message{
     color: $color-white;
     background-color: $color-danger;
     border: 2px solid $color-green--dark;
     padding: toRem(6) toRem(12);
+    margin-bottom: 1rem;
 }

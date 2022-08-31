@@ -37,6 +37,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('/newsletter/store', 'newsletterStore')->name('home.newsletter.store');
     Route::post('/email/check', 'emailCheck')->name('email.check');
     Route::post('/register', 'register')->name('home.register');  
+    Route::get('/admission', 'adminssion')->name('home.admission');
+    Route::post('admission/store', 'admissionStore')->name('home.admission.store');
 });
 
 
@@ -47,4 +49,9 @@ Route::controller(AdminController::class)->middleware('auth')->prefix('admin')->
     Route::post('subscriber/mail/send', 'subscriberMailSend')->name('admin.subscriber.mail.send');
     Route::get('/user/list', 'userList')->name('admin.user');
     Route::post('user/staus/change', 'userStausChange')->name('user.staus.change');
+    Route::get('/student/list', 'studentList')->name('admin.student');
+    Route::post('student/approve', 'studentApprove')->name('admin.student.approve');
+    Route::post('student/reject', 'studentReject')->name('admin.student.reject');
+    Route::post('student/pending', 'studentPending')->name('admin.student.pending');
+
 });

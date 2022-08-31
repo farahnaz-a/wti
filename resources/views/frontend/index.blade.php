@@ -57,7 +57,7 @@
 				<div class="col-lg-6 pt-3 pt-lg-0 pl-lg-5">
 					<h1 class="banner__title">লক্ষ্য হোক <span class="bubbles-animation bubbles-animation--primary">দক্ষ</span> হওয়া!</h1>
 					<p class="banner__text">অভিজ্ঞ মেন্টর আর আপডেটেড কারিকুলাম নিয়ে ওয়েব ট্রেনিং ইনস্টিটিউট প্রস্তুত আপনার ক্যারিয়ার গড়ার অগ্রযাত্রায়। আমাদের ট্রেন্ডি কোর্স থেকে আজই বেছে নিন আপনার পছন্দের কোর্স। এবং ঘরে বসেই নিজের স্কিল ডেভেলপ করুন- সেরা এক্সপার্টদের কাছ থেকে!</p>
-					<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="#!">
+					<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 						এখনই রেজিস্টার করুন
 						<i class="bi bi-arrow-up-right"></i>
 					</a>

@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="tel:01868752464" target="_blank" class="social-nav__item__link">
+                            <a href="tel:01643390112" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-whatsapp"></i>
                             </a>
                         </li>
@@ -71,6 +71,8 @@
     </button>
 </div>
 
+@stack('all_modals')
+ 
 <!-- All Scripts -->
 <script src="{{ asset('assets/frontend/assets/js/jquery-1.12.4.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

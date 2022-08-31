@@ -115,11 +115,11 @@
                     @csrf
                     <div class="form-group">
                       <label for="subject">Subject</label> 
-                      <input type="text" name="subject" id="subject" class="form-control">
+                      <input type="text" name="subject" id="subject" class="form-control" required>
                     </div>  
                     <div class="form-group">
                       <label for="message">Message</label> 
-                      <textarea name="mail_body" id="message" class="form-control"></textarea>
+                      <textarea name="mail_body" id="message" class="form-control" required></textarea>
                     </div>  
                   </form>
             </div>

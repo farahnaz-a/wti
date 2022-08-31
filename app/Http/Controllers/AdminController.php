@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SubscriberPromotionMail;
+use App\Models\Admission;
 use App\Models\Subscriber;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -64,6 +65,39 @@ class AdminController extends Controller
         return back()->with('success', 'Status Updated');
     }
 
+    // Student list 
+    public function studentList(){
+        $students = Admission::latest()->get();
+        return view('backend.students', compact('students'));
+    }
+
+    // Student Approve 
+    public function studentApprove(Request $request){
+        $request->validate([
+            'batch_id' => 'required',
+        ]);
+        Admission::find($request->id)->update([
+            'status' => 'approved',
+            'batch_id' => $request->batch_id,
+        ]);
+        return back()->with('success', 'Approved Successfully');
+    }
+
+    // Student Rejected 
+    public function studentReject(Request $request){
+        Admission::find($request->id)->update([
+            'status' => 'rejected', 
+        ]);
+        return back()->with('success', 'Rejected Successfully');
+    }
+
+    // Student Pending 
+    public function studentPending(Request $request){
+        Admission::find($request->id)->update([
+            'status' => 'pending', 
+        ]);
+        return back()->with('success', 'Rejected Successfully');
+    }
 
 
     // END

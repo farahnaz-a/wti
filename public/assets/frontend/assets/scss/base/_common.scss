@@ -555,6 +555,51 @@ img{
 	}
 }
 
+/* Custom Option Style */
+.custom-option{
+	position: relative;
+	display: block;
+	cursor: pointer;
+	margin-bottom: 30px;
+	&__card{
+		padding: 15px;
+		border: 2px solid $color-ash;
+		background-color: $color-white;
+		box-shadow: 0.3em 0.3em 0 $color-ash;
+		background-color: $color-white;
+		text-align: right;
+		&__input{
+			width: toRem(25);
+			height: toRem(25);
+			border: 2px solid $color-ash;
+		}
+		&__image{
+			max-width: 100%;
+			max-height: toRem(50);
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+	&__input{
+		position: absolute;
+		user-select: none;
+		pointer-events: none;
+		opacity: 0;
+		&:focus-visible ~ .custom-option__card{
+			box-shadow: 0.3em 0.3em 0 $color-primary;
+		}
+		&:checked ~ .custom-option__card{
+			.custom-option__card__input{
+				background-image: url('../images/icons/checkmark.svg');
+				background-position: 50% 50%;
+				background-size: toRem(13);
+				background-repeat: no-repeat;
+				box-shadow: 0.2em 0.2em 0 $color-ash;
+			}
+		}
+	}
+}
+
 /* Common Section Heading Style */
 .section-header{
 	margin-bottom: toRem(50);
@@ -885,6 +930,60 @@ img{
 						font-size: toRem(20);
 					}
 				}
+			}
+		}
+	}
+}
+
+.payment-process{
+	&__card{
+		padding: 15px;
+		background-color: $color-white;
+		border: 2px solid $color-ash;
+		margin-bottom: 1rem;
+	}
+}
+
+.timeline-list{
+	&__item{
+		position: relative;
+		display: flex;
+		z-index: 1;
+		&:not(:last-child){
+			padding-bottom: toRem(15);
+			&::before{
+				content: "";
+				position: absolute;
+				top: 0;
+				left: toRem(35 / 2);
+				width: 3px;
+				background-color: $color-ash;
+				height: 100%;
+				z-index: -1;
+			}
+		}
+		&__count{
+			flex-shrink: 0;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			width: toRem(35);
+			height: toRem(35);
+			border: 2px solid $color-ash;
+			background-color: $color-white;
+			box-shadow: 0.3em 0.3em 0 $color-ash;
+			margin-right: toRem(20);
+		}
+		&__content{
+			&__title{
+				font-size: toRem(18);
+				font-weight: 600;
+			}
+			&__text{
+				font-size: toRem(16);
+				font-weight: 500;
+				line-height: 2;
 			}
 		}
 	}
