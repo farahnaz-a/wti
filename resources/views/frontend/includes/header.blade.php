@@ -73,35 +73,46 @@
 						<li class="nav-item">
 							<a class="nav-link @yield('contactActive')" href="{{ route('home.contact') }}">যোগাযোগ</a>
 						</li>
-					</ul>
-					<ul class="action-nav nav text-center">
-						@auth 
-						<li class="nav-item">
-							<form action="{{ route('logout') }}" method="POST">
-								@csrf
-								<button type="submit" class="btn btn--secondary bubbles-animation bubbles-animation--secondary">
-									লগআউট 
-								</button>
-							</form>
-						</li>
-						<li class="nav-item">
-							<a class="btn btn--primary bubbles-animation bubbles-animation--primary @yield('dashboard')" href="#!">
-								ড্যাশবোর্ড
-							</a>
-						</li> 
-						@else
-						<li class="nav-item">
-							<a class="btn btn--secondary bubbles-animation bubbles-animation--secondary @yield('login')" href="{{ url('/login') }}">
-								লগইন
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="btn btn--primary bubbles-animation bubbles-animation--primary @yield('register')" href="{{ url('/register') }}">
-								একাউন্ট তৈরি করুন
-							</a>
-						</li> 
-						@endauth
-					</ul>
+					</ul> 
+					@auth 
+						<ul class="dashboard-nav nav text-center">
+							<li class="nav-item dropdown">
+								<a role="button" class="dashboard-nav__link dropdown-toggle" href="javascript:void(0);" id="navbarDashboardDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<div class="dashboard-nav__link__avatar">
+										@if (\Auth::user()->image)
+											<img src="{{ asset('uploads/profile') }}/{{ \Auth::user()->image }}" alt="user image" class="dashboard-nav__link__avatar__image ProfileImage">
+										@endif
+										<span class="dashboard-nav__link__avatar__text">{{ substr(trim(\Auth::user()->name), 0, 1) }}</span>
+									</div>
+									<span class="dropdown-toggle__icon">
+										<i class="bi bi-chevron-down"></i>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDashboardDropdown">
+									<a class="dropdown-item @yield('dashboard')" href="{{ route('home.dashboard') }}">আপনার ড্যাশবোর্ড</a> 
+									<form action="{{ route('logout') }}" method="POST">
+										@csrf
+										<button type="submit" class="dropdown-item">
+											লগআউট 
+										</button>
+									</form>
+								</div>
+							</li>
+						</ul>
+					@else
+						<ul class="action-nav nav text-center">
+							<li class="nav-item">
+								<a class="btn btn--secondary bubbles-animation bubbles-animation--secondary @yield('login')" href="{{ url('/login') }}">
+									লগইন
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="btn btn--primary bubbles-animation bubbles-animation--primary @yield('register')" href="{{ url('/register') }}">
+									একাউন্ট তৈরি করুন
+								</a>
+							</li> 
+						</ul>
+					@endauth
 				</div>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
 			</div>

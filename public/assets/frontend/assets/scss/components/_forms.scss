@@ -1,3 +1,4 @@
+/* Common Form Style */
 .form{
     $shadow-size: 0.3em;
     position: relative;
@@ -63,10 +64,12 @@
 
 }
 
+/* Custom Select Style */
 .custom-select{
     cursor: pointer;
 }
 
+/* Input Group Style */
 .input-group{
     &-append{
         margin-left: -2px;
@@ -86,24 +89,66 @@
     }
 }
 
+/* Custom Option Style */
+.custom-option{
+	position: relative;
+	display: block;
+	cursor: pointer;
+	margin-bottom: 30px;
+	&__card{
+		padding: 15px;
+		border: 2px solid $color-ash;
+		background-color: $color-white;
+		box-shadow: 0.3em 0.3em 0 $color-ash;
+		background-color: $color-white;
+		text-align: right;
+		&__input{
+			width: toRem(25);
+			height: toRem(25);
+			border: 2px solid $color-ash;
+		}
+		&__image{
+			max-width: 100%;
+			max-height: toRem(50);
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+	&__input{
+		position: absolute;
+		user-select: none;
+		pointer-events: none;
+		opacity: 0;
+		&:focus-visible ~ .custom-option__card{
+			box-shadow: 0.3em 0.3em 0 $color-primary;
+		}
+		&:checked ~ .custom-option__card{
+			.custom-option__card__input{
+				background-image: url('../images/icons/checkmark.svg');
+				background-position: 50% 50%;
+				background-size: toRem(13);
+				background-repeat: no-repeat;
+				box-shadow: 0.2em 0.2em 0 $color-ash;
+			}
+		}
+	}
+}
+
+/* Success & Error Option Style */
 .success-message,
 .error-message
 {
+    color: $color-white;
+    border: 2px solid $color-green--dark;
+    padding: toRem(6) toRem(12);
+    margin-bottom: 1rem;
     text-align: left;
 }
 
 .success-message{
-    color: $color-white;
     background-color: $color-primary;
-    border: 2px solid $color-green--dark;
-    padding: toRem(6) toRem(12);
-    margin-bottom: 1rem;
 }
 
 .error-message{
-    color: $color-white;
     background-color: $color-danger;
-    border: 2px solid $color-green--dark;
-    padding: toRem(6) toRem(12);
-    margin-bottom: 1rem;
 }

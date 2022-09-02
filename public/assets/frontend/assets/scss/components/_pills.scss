@@ -1,0 +1,24 @@
+.nav-pills{
+    background-color: $color-white;
+    border: 2px solid $color-ash;
+    box-shadow: 0.3em 0.3em 0 $color-ash;
+    padding: 15px;
+    &__link{
+        display: block;
+        padding: .5rem 1rem;
+        font-weight: 600;
+        border: 2px solid transparent;
+        transition: all .15s ease-in-out;
+        &.active{
+            color: $color-white;
+            background-color: $color-primary;
+            border-color: $color-ash;
+        }
+        &:active,
+        &:focus-visible
+        {
+            color: $color-ash;
+            background-color: $color-cream;
+        }
+    }
+}

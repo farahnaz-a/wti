@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\AdmissionMail;
-use App\Mail\RegisterMail;
-use App\Models\Admission;
-use App\Models\ContactMessage;
-use App\Models\Course;
-use App\Models\Subscriber;
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Admission;
+use App\Mail\RegisterMail;
+use App\Models\Subscriber;
+use App\Mail\AdmissionMail;
 use Illuminate\Http\Request;
+use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -63,7 +64,7 @@ class HomeController extends Controller
     }
 
     // Register New user 
-    public function register(Request $request){
+    public function register(Request $request){ 
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -86,7 +87,7 @@ class HomeController extends Controller
             'password' => $request->password,
         ]); 
 
-        return to_route('dashboard');
+        return to_route('home.dashboard');
     }
 
     // Admission Page 
@@ -151,6 +152,84 @@ class HomeController extends Controller
         Mail::to($request->email)->send(new AdmissionMail());
 
         return to_route('dashboard');
+
+    }
+
+    // all Course page 
+    public function allCourse(){
+        $courses = Course::where('status', 'active')->get();
+        return view('frontend.all-course', compact('courses'));
+    }
+
+    // Course details 
+    public function courseDetails($slug){
+        $course = Course::where('id', $slug)->first();
+        return view('frontend.course-details', compact('course'));
+    }
+
+    // Dashboard 
+    public function dashboard(){
+        $user = Auth::user(); 
+        return view('frontend.dashboard', compact('user'));
+    }
+
+    // Info udpate 
+    public function infoUdate(Request $request){  
+        $request->validate([
+            'name'          => 'required',
+            'email'         => 'required|email|unique:users,email,'.Auth::id(),
+            'phone'         => 'required|max:15',
+            'image'         => 'image', 
+        ], [
+            'name.required' => 'ঘরটি অবশ্যই পূরণ করতে হবে !',
+            'email.required' => 'ঘরটি অবশ্যই পূরণ করতে হবে !',
+            'email.email' => 'আপনার ইমেইলটি সঠিক নয় !',
+            'email.unique' => 'এই ইমেইলটি আগেও ব্যবহার করা হয়েছে !',
+            'phone.required' => 'ঘরটি অবশ্যই পূরণ করতে হবে !',
+            'phone.max' => 'ফোন নম্বর সর্বোচ্চ ১৫টি সংখ্যা হতে পারবে !', 
+            'image.image' => 'অবশ্যই একটি ছবি নির্বাচন করতে হবে !',
+        ]);
+        $user = User::find(Auth::id());
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone, 
+        ]);
+
+        if($request->file('image')){
+            $image = $request->file('image');
+            $file_name = Auth::id().rand(0000,9999).'.'.$image->extension();   
+            $path = public_path('uploads/profile');
+            $image->move($path, $file_name);
+            $user->image = $file_name;
+            $user->save();
+        } 
+
+        return response($user);
+
+ 
+
+    }
+
+    // Password udpate 
+    public function passwordUdate(Request $request){  
+        $request->validate([ 
+            'password'      => 'required|old_password_check',
+            'new_password'  => 'required|min:8',
+        ], [ 
+            'password.required' => 'ঘরটি অবশ্যই পূরণ করতে হবে !',
+            'password.old_password_check' => 'বর্তমান পাসওয়ার্ডটি সঠিক নয় !',
+            'new_password.required' => 'ঘরটি অবশ্যই পূরণ করতে হবে !',
+            'new_password.min' => 'পাসওয়ার্ডটি সর্বনিম্ন ৮ টি সংখ্যা হতে পারবে !', 
+        ]);
+        $user = User::find(Auth::id());
+        $user->update([ 
+            'password' => bcrypt($request->new_password),
+        ]); 
+        return response('success');
+
+ 
 
     }
 

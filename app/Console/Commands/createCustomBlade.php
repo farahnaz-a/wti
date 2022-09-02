@@ -38,6 +38,6 @@ class createCustomBlade extends Command
         $template_data = file_get_contents($path);  
         $path2 = resource_path('views/'.$main_path.'/'.$fileName.'.blade.php'); 
         File::put($path2, $template_data); 
-        $this->info('Custom blade createde');
+        $this->info('Custom blade created');
     }
 }

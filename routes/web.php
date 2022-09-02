@@ -39,6 +39,11 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('/register', 'register')->name('home.register');  
     Route::get('/admission', 'adminssion')->name('home.admission');
     Route::post('admission/store', 'admissionStore')->name('home.admission.store');
+    Route::get('/all-course', 'allCourse')->name('home.course');
+    Route::get('/course/details/{slug}', 'courseDetails')->name('home.course.details');
+    Route::get('/dashboard', 'dashboard')->name('home.dashboard')->middleware('auth');
+    Route::post('/dashboard/update', 'infoUdate')->name('home.info.update')->middleware('auth');
+    Route::post('/dashboard/password/update', 'passwordUdate')->name('home.password.update')->middleware('auth');
 });
 
 

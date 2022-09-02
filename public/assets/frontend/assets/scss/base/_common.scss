@@ -57,19 +57,17 @@ ol {
 
 img{
 	object-fit: cover;
+	user-select: none;
+	pointer-events: none;
 }
 
 .user-select-none{
 	pointer-events: none;
 }
 
-.list-inline{
-	font-size: 0;
-	&-item{
-		font-size: 1rem;
-	}
+.custom-cursor{
+	cursor: url('../images/icons/click.png'), auto;
 }
-
 
 /* Bubbles Animation Style */
 .bubbles-animation{
@@ -162,11 +160,11 @@ img{
 }
 
 /* Custom Container Style */
-// .container{
-// 	@include min-desktop-lg{
-// 		max-width: 1260px;
-// 	}
-// }
+.container{
+	@include min-desktop-xl{
+		max-width: 1320px;
+	}
+}
 
 /* Common Slick Style */
 .slick{
@@ -218,6 +216,16 @@ img{
 					background: transparent;
 				}
 			}
+		}
+	}
+}
+
+/* Common Fancybox Style */
+.fancybox{
+	&-button{
+		&--close{
+			color: $color-white;
+			background-color: $color-danger;
 		}
 	}
 }
@@ -293,6 +301,15 @@ img{
 	}
 }
 
+/* Inline List Style */
+.list-inline{
+	font-size: 0;
+	&-item{
+		font-size: 1rem;
+	}
+}
+
+/* Styled List Style */
 .styled-list{
 	&__item{
 		$shadow-size: 0.15em;
@@ -347,6 +364,71 @@ img{
 		}
 		&:not(:last-child){
 			margin-bottom: toRem(15);
+		}
+	}
+}
+
+/* Rating List Style */
+.rating-list{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 2px;
+    &__item{
+        &__icon{
+            color: $color-secondary;
+            font-size: toRem(30);
+			transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+			cursor: pointer;
+			&:hover{
+				transform: scale(1.1);
+			}
+        }
+    }
+}
+
+/* Timeline List Style */
+.timeline-list{
+	&__item{
+		position: relative;
+		display: flex;
+		z-index: 1;
+		&:not(:last-child){
+			padding-bottom: toRem(15);
+			&::before{
+				content: "";
+				position: absolute;
+				top: 0;
+				left: toRem(35 / 2);
+				width: 3px;
+				background-color: $color-ash;
+				height: 100%;
+				z-index: -1;
+			}
+		}
+		&__count{
+			flex-shrink: 0;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			width: toRem(35);
+			height: toRem(35);
+			border: 2px solid $color-ash;
+			background-color: $color-white;
+			box-shadow: 0.3em 0.3em 0 $color-ash;
+			margin-right: toRem(20);
+		}
+		&__content{
+			&__title{
+				font-size: toRem(18);
+				font-weight: 600;
+			}
+			&__text{
+				font-size: toRem(16);
+				font-weight: 500;
+				line-height: 2;
+			}
 		}
 	}
 }
@@ -429,6 +511,55 @@ img{
 	}
 }
 
+.close-btn{
+	display: inline-block;
+	border: 2px solid $color-ash;
+	color: $color-white;
+	background-color: $color-danger;
+	padding: .715rem .736rem;
+	line-height: 0;
+	box-shadow: 0.2em 0.2em 0 $color-ash;
+}
+
+/* Common Navbar Style */
+.nav{
+	&-link{
+		position: relative;
+		z-index: 1;
+		@extend %transition;
+
+		&::before{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%) rotate(45deg) scale(0);
+			width: 5px;
+			height: 100%;
+			background-color: $color-secondary;
+			z-index: -1;
+			transition: transform .3s ease-in-out;
+		}
+
+		&:active,
+		&.active
+		{
+			&::before{
+				transform: translateX(-50%) rotate(45deg) scale(1);
+			}
+		}
+		@include hover{
+			&:hover,
+			&:focus-visible
+			{
+				&::before{
+					transform: translateX(-50%) rotate(45deg) scale(1);
+				}
+			}
+		}
+	}
+}
+
 /* Common Social Navbar Style */
 .social-nav{
 	display: flex;
@@ -497,109 +628,6 @@ img{
 	flex: 1 1 auto;
 }
 
-/* Rating List Style */
-.rating-list{
-    display: flex;
-    align-items: center;
-    margin-bottom: 0;
-    gap: 2px;
-    &__item{
-        &__icon{
-            color: $color-secondary;
-            font-size: toRem(30);
-			transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
-			cursor: pointer;
-			&:hover{
-				transform: scale(1.1);
-			}
-        }
-    }
-}
-
-/* Common Navbar Style */
-.nav{
-	&-link{
-		position: relative;
-		z-index: 1;
-		@extend %transition;
-
-		&::before{
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%) rotate(45deg) scale(0);
-			width: 5px;
-			height: 100%;
-			background-color: $color-secondary;
-			z-index: -1;
-			transition: transform .3s ease-in-out;
-		}
-
-		&:active,
-		&.active
-		{
-			&::before{
-				transform: translateX(-50%) rotate(45deg) scale(1);
-			}
-		}
-		@include hover{
-			&:hover,
-			&:focus-visible
-			{
-				&::before{
-					transform: translateX(-50%) rotate(45deg) scale(1);
-				}
-			}
-		}
-	}
-}
-
-/* Custom Option Style */
-.custom-option{
-	position: relative;
-	display: block;
-	cursor: pointer;
-	margin-bottom: 30px;
-	&__card{
-		padding: 15px;
-		border: 2px solid $color-ash;
-		background-color: $color-white;
-		box-shadow: 0.3em 0.3em 0 $color-ash;
-		background-color: $color-white;
-		text-align: right;
-		&__input{
-			width: toRem(25);
-			height: toRem(25);
-			border: 2px solid $color-ash;
-		}
-		&__image{
-			max-width: 100%;
-			max-height: toRem(50);
-			pointer-events: none;
-			user-select: none;
-		}
-	}
-	&__input{
-		position: absolute;
-		user-select: none;
-		pointer-events: none;
-		opacity: 0;
-		&:focus-visible ~ .custom-option__card{
-			box-shadow: 0.3em 0.3em 0 $color-primary;
-		}
-		&:checked ~ .custom-option__card{
-			.custom-option__card__input{
-				background-image: url('../images/icons/checkmark.svg');
-				background-position: 50% 50%;
-				background-size: toRem(13);
-				background-repeat: no-repeat;
-				box-shadow: 0.2em 0.2em 0 $color-ash;
-			}
-		}
-	}
-}
-
 /* Common Section Heading Style */
 .section-header{
 	margin-bottom: toRem(50);
@@ -615,6 +643,12 @@ img{
 		}
 		@include mobile{
 			font-size: toRem(26);
+		}
+	}
+	&__text{
+		margin-top: toRem(20);
+		@include min-tablet{
+			font-size: toRem(18);
 		}
 	}
 }
@@ -642,6 +676,207 @@ img{
 		margin: toRem(10) 0 toRem(20);
 		@include min-tablet{
 			font-size: toEm(20);
+		}
+	}
+}
+
+/* Sub Banner Section Style */
+.sub-banner{
+	@extend %section-shape;
+	background-color: $color-cream;
+	padding: 6rem 0 7rem;
+	&__title{
+		font-family: $font-secondary;
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+}
+
+/* Services Section Style */
+.services{
+	&__sub-title{
+		font-size: toRem(28);
+		margin-bottom: 2rem;
+	}
+}
+
+/* Services Details Section Style */
+.services-details{
+	&__header{
+		@extend %section-shape;
+		background-color: $color-white--off;
+		padding: toRem(100) 0;
+		@include mobile{
+			padding-top: toRem(50)
+		}
+	}
+	&__sub-title{
+		color: #3c353d;
+		font-size: toRem(16);
+		font-weight: 700;
+		background-color: $color-secondary--lighten;
+		border: 2px solid $color-ash;
+		box-shadow: 0.2em 0.2em 0 $color-ash;
+		padding: 8px;
+		margin-bottom: toRem(15);
+	}
+	&__title{
+		font-size: toRem(32);
+		@include min-desktop{
+			font-size: toRem(45);
+		}
+		font-family: $font-secondary;
+		font-weight: 900;
+	}
+	&__item{
+		padding: 20px 15px;
+		background-color: $color-white;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		text-align: center;
+		border: 2px solid $color-ash;
+		&__text{
+			margin-bottom: 5px;
+		}
+		&__title{
+			font-size: toRem(26);
+			margin-bottom: 0;
+			font-weight: 900;
+		}
+		&:active,
+		&:focus-visible
+		{
+			box-shadow: 0.3em 0.3em 0 $color-ash;
+		}
+		&:is(a){
+			transition: box-shadow .2s ease-in-out;
+			@include hover{
+				&:hover{
+					box-shadow: 0.3em 0.3em 0 $color-ash;
+				}
+			}
+		}
+	}
+	&__text{
+		@include min-desktop{
+			font-size: toRem(18);
+		}
+		line-height: 1.8;
+	}
+	&__video{
+		$shadow-size: 0.4em;
+		position: relative;
+		display: block;
+		padding: 10px;
+		background-color: $color-white--off;
+		border: 2px solid $color-ash;
+		box-shadow:
+			$shadow-size $shadow-size 0 $color-secondary,
+			$shadow-size $shadow-size 0 1px $color-black;
+		&__poster{
+			width: 100%;
+			height: 100%;
+			max-height: toRem(415);
+			user-select: none;
+			pointer-events: none;
+		}
+		&::before{
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(to top, rgba($color-primary, $alpha: 0.8), transparent);
+			transition: opacity .3s linear;
+			pointer-events: none;
+			user-select: none;
+		}
+		&__btn{
+			position: absolute;
+			top: 10%;
+			right: 10%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: toRem(50);
+			height: toRem(50);
+			font-size: toRem(30);
+			color: $color-black;
+			background-color: $color-secondary;
+			border: 2px solid $color-ash;
+			box-shadow: 0.2em 0.2em 0 $color-ash;
+		}
+		&:active{
+			&::before{
+				opacity: 0;
+			}
+		}
+		@include hover{
+			&:focus-visible,
+			&:hover
+			{
+				&::before{
+					opacity: 0;
+				}
+			}
+		}
+	}
+	&__aside{
+		position: sticky;
+		top: calc((var(--header-height) - 2) * 1px);
+	}
+	&__card{
+		$shadow-size: 0.4em;
+		padding: toRem(30) toRem(15);
+		background-color: $color-cream;
+		border: 2px solid $color-ash;
+		box-shadow:
+			$shadow-size $shadow-size 0 $color-primary,
+			$shadow-size $shadow-size 0 1px $color-black;
+		&__block{
+			padding: toRem(30) toRem(20);
+			background-color: $color-white;
+			border: 2px solid $color-ash;
+			margin-top: toRem(15);
+			margin-bottom: toRem(15);
+			&__title{
+				font-weight: 700;
+			}
+		}
+	}
+	&__body{
+		&__title{
+			font-weight: 700;
+		}
+		&__card{
+			display: block;
+			text-align: center;
+			padding: toRem(20) toRem(15);
+			border: 2px solid $color-ash;
+			margin-top: toRem(15);
+			margin-bottom: toRem(15);
+			box-shadow:
+				0.4em 0.4em 0 $color-ash,
+				inset 0 0.4em 0 $color-primary;
+
+			&__image{
+				max-width: 100%;
+				height: 100%;
+				max-height: toRem(100);
+			}
+			&__title{
+				font-weight: 600;
+				font-family: $font-secondary;
+				margin-top: toRem(20);
+				margin-bottom: 0;
+			}
+			&__text{
+				margin-top: toRem(10);
+				margin-bottom: 0;
+				font-size: toRem(14);
+				font-weight: 600;
+			}
 		}
 	}
 }
@@ -935,6 +1170,7 @@ img{
 	}
 }
 
+/* Payment Process Section Style */
 .payment-process{
 	&__card{
 		padding: 15px;
@@ -944,47 +1180,139 @@ img{
 	}
 }
 
-.timeline-list{
-	&__item{
+.dashboard{
+	&__aside{
+		position: sticky;
+		top: calc((var(--header-height) + 2) * 1px);
+	}
+}
+
+.image-uploader{
+	position: relative;
+	cursor: pointer;
+	border-radius: 50%;
+	&__input{
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+		user-select: none;
+		width: 0;
+		height: 0;
+	}
+}
+
+.image-holder__card{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: toRem(160);
+	height: toRem(160);
+	border-radius: 50%;
+	overflow: hidden;
+	border: 3px solid $color-ash;
+	background-color: $color-secondary--light;
+	box-shadow: -0.3em 0.3em 0 $color-primary;
+	&__text{
+		font-size: toRem(50);
+		font-weight: 700;
+	}
+	&__preview{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 0;
+	}
+}
+
+.profile-pane{
+	&__edit{
 		position: relative;
+	}
+	&--close-btn{
+		@include desktop{
+			margin-bottom: 1rem;
+		}
+		@include min-desktop{
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+}
+
+.dashboard-course-card{
+	padding: 15px;
+	border: 2px solid $color-ash;
+	box-shadow: 0.3em 0.3em 0 $color-ash;
+	margin-bottom: 30px;
+	@include min-tablet{
 		display: flex;
-		z-index: 1;
-		&:not(:last-child){
-			padding-bottom: toRem(15);
-			&::before{
-				content: "";
-				position: absolute;
-				top: 0;
-				left: toRem(35 / 2);
-				width: 3px;
-				background-color: $color-ash;
+	}
+	&__header{
+		display: block;
+		border: 2px solid $color-ash;
+		padding: 5px;
+		background-color: $color-secondary--light;
+		@include min-tablet{
+			max-width: toRem(200);
+		}
+		&__image{
+			width: 100%;
+			@include min-tablet{
 				height: 100%;
-				z-index: -1;
 			}
 		}
-		&__count{
-			flex-shrink: 0;
+	}
+	&__body{
+		@include tablet{
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		@include min-tablet{
+			padding-left: 15px;
+			padding-right: 15px;
+			flex-grow: 1;
+		}
+		&__title__link{
+			display: block;
+			&:hover{
+				text-decoration: underline 2px;
+			}
+		}
+		&__sub-title{
+			font-size: toRem(18);
+			font-weight: 700;
+		}
+		&__icon-btn{
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			font-weight: 700;
-			width: toRem(35);
-			height: toRem(35);
+			width: toRem(30);
+			height: toRem(30);
 			border: 2px solid $color-ash;
-			background-color: $color-white;
-			box-shadow: 0.3em 0.3em 0 $color-ash;
-			margin-right: toRem(20);
+			background-color: $color-secondary;
+			box-shadow: 0.2em 0.2em 0 $color-primary;
 		}
-		&__content{
-			&__title{
-				font-size: toRem(18);
-				font-weight: 600;
-			}
-			&__text{
-				font-size: toRem(16);
-				font-weight: 500;
-				line-height: 2;
-			}
-		}
+	}
+}
+
+.status{
+	display: inline-block;
+	font-size: 14px;
+	padding: 5px 10px;
+	font-weight: 700;
+	color: $color-white;
+	border: 2px solid $color-ash;
+	text-transform: uppercase;
+	&--warning{
+		background-color: $color-warning;
+	}
+	&--success{
+		background-color: $color-primary;
 	}
 }
