@@ -2,37 +2,31 @@
 @extends('frontend.layouts.app')
 
 {{-- Site title  --}}
-@section('title') @endsection
+@section('title') Success Mind Institute @endsection
 
 {{-- Meta Description --}}
-@section('meta_description') @endsection
+@section('meta_description') Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.   @endsection
 
 {{-- Meta Keywords  --}}
-@section('meta_keywords') @endsection
-
-{{-- Meta facebook type --}}
-@section('fb_type') @endsection
+@section('meta_keywords') Success-Mind-Institute @endsection
 
 {{-- Meta facebook url  --}}
-@section('fb_url') @endsection
+@section('fb_url') https://www.successmindinstitute.com/register @endsection
 
 {{-- Meta facebook title --}}
-@section('fb_title') @endsection
+@section('fb_title') Success Mind Institute @endsection
 
 {{-- Meta facebook Description --}}
-@section('fb_description') @endsection
-
-{{-- Meta Twitter card  --}}
-@section('twitter_card') @endsection
+@section('fb_description') Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.   @endsection
 
 {{-- Meta Twitter url  --}}
-@section('twitter_url') @endsection
+@section('twitter_url') https://www.successmindinstitute.com/register @endsection
 
 {{-- Meta Twitter title  --}}
-@section('twitter_title') @endsection
+@section('twitter_title') Success Mind Institute @endsection
 
 {{-- Meta Twitter description  --}}
-@section('twitter_desciption') @endsection
+@section('twitter_desciption') Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.   @endsection
 
 {{-- Menu Active --}}
 @section('register', 'active')

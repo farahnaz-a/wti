@@ -6,25 +6,25 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
 	<!-- Site Meta Data -->
-    <meta name="author" content="Web Traning Institute">
+    <meta name="author" content="Success Mind Institute">
     <meta name="title" content="@yield('title') {{ config('app.name') }}">
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keywords')">
 	<!-- Primary Meta Tags -->   
 
 	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="@yield('fb_type')">
+	<meta property="og:type" content="website">
 	<meta property="og:url" content="@yield('fb_url')">
 	<meta property="og:title" content="@yield('fb_title')">
 	<meta property="og:description" content="@yield('fb_description')">
-	<meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+	<meta property="og:image" content="{{ asset('assets/frontend/assets/images/meta/og-image.png') }}">
 
 	<!-- Twitter -->
-	<meta property="twitter:card" content="@yield('twitter_card')">
+	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="@yield('twitter_url')">
 	<meta property="twitter:title" content="@yield('twitter_title')">
 	<meta property="twitter:description" content="@yield('twitter_desciption')">
-	<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+	<meta property="twitter:image" content="{{ asset('assets/frontend/assets/images/meta/og-image.png') }}">
 
 	<!-- Favicon Link -->
 	<link rel="icon" type="image/png" sizes="512x512" href="{{ asset("assets/frontend/assets/images/favicon/android-chrome-512x512.png") }}">
@@ -44,12 +44,25 @@
 	@stack('css')
 </head>
 <body>
+	<!-- Preloader Section -->
+	<div class="preloader">
+		<div class="preloader__container">
+			<div class="preloader__main">
+				<div class="preloader__main__block">
+					<div class="preloader__main__block__circle" style="--position: 0"></div>
+					<div class="preloader__main__block__circle" style="--position: 1"></div>
+					<div class="preloader__main__block__circle" style="--position: 2"></div>
+					<div class="preloader__main__block__circle" style="--position: 3"></div>
+				</div>
+			</div>
+		</div>
+    </div>
 	<!-- Header Section -->
 	<header class="header w-100">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container">
 				<a class="navbar-brand page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-					<span class="page-logo__text page-logo__text--top d-block"><span class="page-logo__text__icon"><i class="bi bi-code-slash"></i></span>Web Training</span>						
+					<span class="page-logo__text page-logo__text--top d-block"><span class="page-logo__text__icon"><i class="bi bi-code-slash"></i></span>Success Mind</span>						
 					<span class="page-logo__text page-logo__text--bottom">Institute</span>						
 				</a>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">

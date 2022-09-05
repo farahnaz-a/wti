@@ -1,40 +1,34 @@
 @extends('frontend.layouts.app') 
 
 {{-- Site title  --}}
-@section('title') @endsection
+@section('title', 'Success Mind Institute')
 
 {{-- Meta Description --}}
-@section('meta_description') @endsection
+@section('meta_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Keywords  --}}
-@section('meta_keywords') @endsection
-
-{{-- Meta facebook type --}}
-@section('fb_type') @endsection
+@section('meta_keywords', 'Success-Mind-Institute')
 
 {{-- Meta facebook url  --}}
-@section('fb_url') @endsection
+@section('fb_url', 'https://www.successmindinstitute.com/')
 
 {{-- Meta facebook title --}}
-@section('fb_title') @endsection
+@section('fb_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta facebook Description --}}
-@section('fb_description') @endsection
-
-{{-- Meta Twitter card  --}}
-@section('twitter_card') @endsection
+@section('fb_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Twitter url  --}}
-@section('twitter_url') @endsection
+@section('twitter_url', 'https://www.successmindinstitute.com/')
 
 {{-- Meta Twitter title  --}}
-@section('twitter_title') @endsection
+@section('twitter_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta Twitter description  --}}
-@section('twitter_desciption') @endsection
+@section('twitter_desciption', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Footer border --}}
-@section('footer_border', ' border-top-0')
+@section('footer_border', 'border-top-0')
 
 {{-- Menu Active --}}
 @section('homeActive', 'active')
@@ -56,7 +50,7 @@
 				</div>
 				<div class="col-lg-6 pt-3 pt-lg-0 pl-lg-5">
 					<h1 class="banner__title">লক্ষ্য হোক <span class="bubbles-animation bubbles-animation--primary">দক্ষ</span> হওয়া!</h1>
-					<p class="banner__text">অভিজ্ঞ মেন্টর আর আপডেটেড কারিকুলাম নিয়ে ওয়েব ট্রেনিং ইনস্টিটিউট প্রস্তুত আপনার ক্যারিয়ার গড়ার অগ্রযাত্রায়। আমাদের ট্রেন্ডি কোর্স থেকে আজই বেছে নিন আপনার পছন্দের কোর্স। এবং ঘরে বসেই নিজের স্কিল ডেভেলপ করুন- সেরা এক্সপার্টদের কাছ থেকে!</p>
+					<p class="banner__text">অভিজ্ঞ মেন্টর আর আপডেটেড কারিকুলাম নিয়ে সাকসেস মাইন্ড ইনস্টিটিউট প্রস্তুত আপনার ক্যারিয়ার গড়ার অগ্রযাত্রায়। আমাদের ট্রেন্ডি কোর্স থেকে আজই বেছে নিন আপনার পছন্দের কোর্স। এবং ঘরে বসেই নিজের স্কিল ডেভেলপ করুন- সেরা এক্সপার্টদের কাছ থেকে!</p>
 					<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 						এখনই রেজিস্টার করুন
 						<i class="bi bi-arrow-up-right"></i>
@@ -108,7 +102,7 @@
 				<div class="col-lg-6 col-md-10">
 					<div class="card">
 						<a class="card__header" href="#!">
-							<img src="https://panel.brightskills.com/media/course/FLEXBOX%20Zero%20to%20Advanced%20for%20Web%20Designer/558-X-1.JPG" alt="card image" class="card__header__image">
+							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="card image" class="card__header__image">
 						</a>
 						<div class="card__meta">
 							<a href="#!" class="card__meta__block card__meta__block--category">
@@ -157,7 +151,7 @@
 				<div class="col-lg-6 col-md-10">
 					<div class="card">
 						<a class="card__header" href="#!">
-							<img src="https://panel.brightskills.com/media/course/Freelancing%20with%20E-mail%20Signature/558-X-364_Course-Banner_2-of-Freelancing-with-Email-Signature.jpg" alt="card image" class="card__header__image">
+							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="card image" class="card__header__image">
 						</a>
 						<div class="card__meta">
 							<a href="#!" class="card__meta__block card__meta__block--category">
@@ -206,7 +200,7 @@
 				<div class="col-lg-6 col-md-10">
 					<div class="card">
 						<a class="card__header" href="#!">
-							<img src="https://panel.brightskills.com/media/course/Freelancing%20with%20WordPress%20Theme%20Customization/558-X-1.JPG" alt="card image" class="card__header__image">
+							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="card image" class="card__header__image">
 						</a>
 						<div class="card__meta">
 							<a href="#!" class="card__meta__block card__meta__block--category">

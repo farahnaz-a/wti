@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-auto text-center text-lg-left mb-4 mb-lg-0">
                     <a class="page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                        <span class="page-logo__text page-logo__text--top d-block"><span class="page-logo__text__icon"><i class="bi bi-code-slash"></i></span>Web Training</span>						
+                        <span class="page-logo__text page-logo__text--top d-block"><span class="page-logo__text__icon"><i class="bi bi-code-slash"></i></span>Success Mind</span>						
                         <span class="page-logo__text page-logo__text--bottom">Institute</span>						
                     </a>
                 </div>
@@ -31,12 +31,12 @@
                 <div class="col-lg-auto">
                     <ul class="social-nav justify-content-center justify-content-lg-start">
                         <li class="social-nav__item">
-                            <a href="https://www.facebook.com/webtraininginst" target="_blank" class="social-nav__item__link">
+                            <a href="https://www.facebook.com/#" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="https://www.youtube.com/webtraininginstitute" target="_blank" class="social-nav__item__link">
+                            <a href="https://www.youtube.com/#" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-youtube"></i>
                             </a>
                         </li>
@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="footer__bottom py-4">
-                    <p class="footer__copyright text-center mb-0">Copyright © 2022 <a href="{{ route('home.index') }}" class="footer__copyright__link">Web Training Institute</a>. All right reserved</p>
+                    <p class="footer__copyright text-center mb-0">Copyright © 2022 <a href="{{ route('home.index') }}" class="footer__copyright__link">Success Mind Institute</a>. All right reserved</p>
                 </div>
             </div>
         </div>

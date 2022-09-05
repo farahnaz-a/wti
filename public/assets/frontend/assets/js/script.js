@@ -3,11 +3,11 @@
 
 	/* Window on load functions */
 	$(window).on('load', function () {
-        // preLoader();
+		preLoader();
 		headerHeightFixer();
 		dropdownAnimation();
     });
-
+	
 	/* Window on Resize functions */
 	$(window).on('resize', function () {
 		headerHeightFixer();
@@ -15,7 +15,9 @@
 
 	/* Preloader init */
 	function preLoader(){
-		$(".preloader").delay(1000).fadeOut("slow");
+		$(".preloader").css("display","block");
+		$(".preloader").addClass("preloader--loaded");
+		$(".preloader").delay(3200).fadeOut("slow");
 	}
 
 	/* Fixed Header */

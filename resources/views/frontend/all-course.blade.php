@@ -1,37 +1,31 @@
 @extends('frontend.layouts.app')
 
 {{-- Site title  --}}
-@section('title') @endsection
+@section('title', 'Success Mind Institute')
 
 {{-- Meta Description --}}
-@section('meta_description') @endsection
+@section('meta_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Keywords  --}}
-@section('meta_keywords') @endsection
-
-{{-- Meta facebook type --}}
-@section('fb_type') @endsection
+@section('meta_keywords', 'Success-Mind-Institute')
 
 {{-- Meta facebook url  --}}
-@section('fb_url') @endsection
+@section('fb_url', 'https://www.successmindinstitute.com/')
 
 {{-- Meta facebook title --}}
-@section('fb_title') @endsection
+@section('fb_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta facebook Description --}}
-@section('fb_description') @endsection
-
-{{-- Meta Twitter card  --}}
-@section('twitter_card') @endsection
+@section('fb_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Twitter url  --}}
-@section('twitter_url') @endsection
+@section('twitter_url', 'https://www.successmindinstitute.com/')
 
 {{-- Meta Twitter title  --}}
-@section('twitter_title') @endsection
+@section('twitter_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta Twitter description  --}}
-@section('twitter_desciption') @endsection
+@section('twitter_desciption', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Footer border --}}
 {{-- @section('footer_border', ' border-top-0') --}}
@@ -54,7 +48,7 @@
             <div class="row">
                 <div class="col-12 section-header text-center">
                     <h1 class="section-header__title"><span class="background-stripe background-stripe--right background-stripe--secondary">বেছে নিন</span> আপনার পছন্দের <span class="background-stripe background-stripe--left background-stripe--primary">কোর্সটি</span></h1>
-                    <p class="section-header__text">বর্তমান বিশ্বের ট্রেন্ডি এবং চাহিদাসম্পন্ন সব কোর্স রয়েছে ওয়েব ট্রেনিং ইনস্টিটিউটে। কোর্স করার সময় যে প্রয়োজনীয় কনফিগারেশনের কম্পিউটার দরকার, তার সবই রয়েছে আমাদের ল্যাবে। আপনি চাইলেই ক্লাস শেষে ল্যাবে বসে কোর্স বিষয়ক যেকোনো কিছু প্র্যাকটিস করতে পারেন। প্রতিটি কোর্স এমনভাবে সাজানো হয়েছে, যাতে কোর্স শেষে প্রতিটি টপিকে কাজ করার আত্মবিশ্বাস আপনার থাকে। </p>
+                    <p class="section-header__text">বর্তমান বিশ্বের ট্রেন্ডি এবং চাহিদাসম্পন্ন সব কোর্স রয়েছে সাকসেস মাইন্ড ইনস্টিটিউটে। কোর্স করার সময় যে প্রয়োজনীয় কনফিগারেশনের কম্পিউটার দরকার, তার সবই রয়েছে আমাদের ল্যাবে। আপনি চাইলেই ক্লাস শেষে ল্যাবে বসে কোর্স বিষয়ক যেকোনো কিছু প্র্যাকটিস করতে পারেন। প্রতিটি কোর্স এমনভাবে সাজানো হয়েছে, যাতে কোর্স শেষে প্রতিটি টপিকে কাজ করার আত্মবিশ্বাস আপনার থাকে। </p>
                 </div>
                 <div class="col-12">
                     <h2 class="services__sub-title"><span class="background-stripe background-stripe--right background-stripe--primary">ওয়েব</span> এন্ড <span class="background-stripe background-stripe--right background-stripe--secondary">সফটওয়্যার</span></h2>
@@ -287,7 +281,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ওয়েব ট্রেনিং ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
                             </div>
                         </div>
                         <div class="testimonial__block">
@@ -328,7 +322,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। ওয়েব ট্রেনিং ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
+                                ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। সাকসেস মাইন্ড ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
                                 এক কথায় এই প্লে লিস্ট টি ওয়াও, ১ম যে ১৭ মিনিটের ভিডিওটি ছিল ব্যাসিক হলেও ১৭ মিনিটে ১৭ মিনিট ই লাইফে কাজে লাগবে, এবং ভালো কিছু জিনিস শিখতে পেরেছি, আশা করি দিন দিন জটিল সমস্যা সমাধান নিয়ে এগিয়ে আসলে আমরা ও হাল ছাড়ব না কারন এক্সপ্লোর করে ই যাচ্ছি আমরা আর চোখের সামনে সেটাই কেন যেন চলে এসে। সবচেয়ে জোস একটা প্লে লিস্ট বলব আমি এই সিরিজ কে ❤️
                             </div>
                         </div>
@@ -370,7 +364,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। ওয়েব ট্রেনিং ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
+                                ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। সাকসেস মাইন্ড ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
                                 এক কথায় এই প্লে লিস্ট টি ওয়াও, ১ম যে ১৭ মিনিটের ভিডিওটি ছিল ব্যাসিক হলেও ১৭ মিনিটে ১৭ মিনিট ই লাইফে কাজে লাগবে, এবং ভালো কিছু জিনিস শিখতে পেরেছি, আশা করি দিন দিন জটিল সমস্যা সমাধান নিয়ে এগিয়ে আসলে আমরা ও হাল ছাড়ব না কারন এক্সপ্লোর করে ই যাচ্ছি আমরা আর চোখের সামনে সেটাই কেন যেন চলে এসে। সবচেয়ে জোস একটা প্লে লিস্ট বলব আমি এই সিরিজ কে ❤️
                             </div>
                         </div>
@@ -412,7 +406,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ওয়েব ট্রেনিং ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
                             </div>
                         </div>
                         <div class="testimonial__block">
@@ -453,7 +447,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ওয়েব ট্রেনিং ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
                             </div>
                         </div>
                         <div class="testimonial__block">
@@ -494,7 +488,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ওয়েব ট্রেনিং ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+                                আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
                             </div>
                         </div>
                         <div class="testimonial__block">
@@ -535,7 +529,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                                ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। ওয়েব ট্রেনিং ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
+                                ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। সাকসেস মাইন্ড ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
                                 এক কথায় এই প্লে লিস্ট টি ওয়াও, ১ম যে ১৭ মিনিটের ভিডিওটি ছিল ব্যাসিক হলেও ১৭ মিনিটে ১৭ মিনিট ই লাইফে কাজে লাগবে, এবং ভালো কিছু জিনিস শিখতে পেরেছি, আশা করি দিন দিন জটিল সমস্যা সমাধান নিয়ে এগিয়ে আসলে আমরা ও হাল ছাড়ব না কারন এক্সপ্লোর করে ই যাচ্ছি আমরা আর চোখের সামনে সেটাই কেন যেন চলে এসে। সবচেয়ে জোস একটা প্লে লিস্ট বলব আমি এই সিরিজ কে ❤️
                             </div>
                         </div>

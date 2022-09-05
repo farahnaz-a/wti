@@ -1,37 +1,31 @@
 @extends('frontend.layouts.app')
 
 {{-- Site title  --}}
-@section('title') @endsection
+@section('title', 'Success Mind Institute')
 
 {{-- Meta Description --}}
-@section('meta_description') @endsection
+@section('meta_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Keywords  --}}
-@section('meta_keywords') @endsection
-
-{{-- Meta facebook type --}}
-@section('fb_type') @endsection
+@section('meta_keywords', 'Success-Mind-Institute')
 
 {{-- Meta facebook url  --}}
-@section('fb_url') @endsection
+@section('fb_url', 'https://www.successmindinstitute.com/contact')
 
 {{-- Meta facebook title --}}
-@section('fb_title') @endsection
+@section('fb_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta facebook Description --}}
-@section('fb_description') @endsection
-
-{{-- Meta Twitter card  --}}
-@section('twitter_card') @endsection
+@section('fb_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Twitter url  --}}
-@section('twitter_url') @endsection
+@section('twitter_url', 'https://www.successmindinstitute.com/contact')
 
 {{-- Meta Twitter title  --}}
-@section('twitter_title') @endsection
+@section('twitter_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta Twitter description  --}}
-@section('twitter_desciption') @endsection
+@section('twitter_desciption', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Menu Active --}}
 @section('contactActive', 'active')
@@ -88,7 +82,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফেসবুক গ্রুপ</h3>
-								<a href="https://www.facebook.com/webtraininginst" target="_blank" class="contact__list__item__text">webtraininginstitute</a>
+								<a href="https://www.facebook.com/#" target="_blank" class="contact__list__item__text">#</a>
 							</div>
 						</div>
 					</div>
@@ -168,7 +162,7 @@
 							<button class="faq-card__header" type="button" data-toggle="collapse" data-target="#faqCollapse1" aria-expanded="true">
 								<div class="faq-card__header__container">
 									<div class="faq-card__header__icon"></div>
-									<h3 class="faq-card__header__title">Web Training Institute থেকে কেন আপনি কোর্স করবেন?</h3>
+									<h3 class="faq-card__header__title">Success Mind Institute থেকে কেন আপনি কোর্স করবেন?</h3>
 								</div>
 							</button>
 						

@@ -1,0 +1,116 @@
+$color-circle--1: var(--color-circle--1);
+$color-circle--2: var(--color-circle--2);
+$color-circle--3: var(--color-circle--3);
+$color-circle--4: var(--color-circle--4);
+$animation-timing-function: var(--animation-timing-function);
+$animation-duration--round: var(--animation-duration--round);
+$animation-duration--popout--outer: var(--animation-duration--popout--outer);
+$animation-duration--popout--inner: var(--animation-duration--popout--inner);
+$animation-play-state: var(--animation-play-state);
+
+/* Preloader Section Style */
+.preloader{
+    --color-circle--1: #{$color-sky};
+    --color-circle--2: #{$color-warning};
+    --color-circle--3: #{$color-primary};
+    --color-circle--4: #{$color-secondary};
+    --animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    --animation-duration--round: 2.5s;
+    --animation-duration--popout--outer: calc(var(--animation-duration--round) * 6);
+    --animation-duration--popout--inner: calc(var(--animation-duration--popout--outer) / 5);
+    --animation-play-state: paused;
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+	background-color: $color-white;
+    overflow: hidden;
+	&__container{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+    &--loaded{
+        --animation-play-state: running;
+    }
+
+    &__main{
+        transform: scale(0.3);
+        animation: popout--outer $animation-duration--popout--outer $animation-timing-function forwards;
+        animation-play-state: $animation-play-state;
+        &__block{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: round $animation-duration--round linear infinite;
+            &__circle{
+                position: absolute;
+                width: 10em;
+                height: 10em;
+                border-radius: 50%;
+                transform: rotate(calc(var(--position) * 30deg));
+    
+                &::before{
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: inherit;
+                    transform: translateY(-50%);
+                }
+                &:nth-child(1)::before{
+                    background-color: $color-circle--1;
+                }
+                &:nth-child(2)::before{
+                    background-color: $color-circle--2;
+                }
+                &:nth-child(3)::before{
+                    background-color: $color-circle--3;
+                }
+                &:nth-child(4)::before{
+                    background-color: $color-circle--4;
+                    animation: popout--inner $animation-duration--popout--inner  $animation-duration--round forwards;
+                    animation-play-state: $animation-play-state;
+                }
+            }
+        }
+    }
+	
+	@keyframes popout--outer {
+		0%{
+			transform: scale(0.3);
+		}
+		100%{
+			transform: scale(100);
+		}
+	}
+	
+	@keyframes popout--inner {
+		0%{
+			transform: scale(1) translateY(-50%);
+		}
+		30%{
+			transform: scale(50) translateY(0);
+		}
+		100%{
+			transform: scale(1000) translateY(0);
+		}
+	}
+	
+	@keyframes round {
+		0%{
+			transform: rotate(0);
+		}
+		100%{
+			transform: rotate(360deg);
+		}
+	}
+}
