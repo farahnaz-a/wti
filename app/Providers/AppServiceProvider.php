@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('old_password_check', function($attributes, $value){
             return Hash::check($value,Auth::user()->password);
         }, 'বর্তমান পাসওয়ার্ডটি সঠিক নয়');
+
+        Schema::defaultStringLength(191);
     }
 }
