@@ -36,7 +36,7 @@
 {{-- Stye  --}}
 @push('css')
 <style>
-    
+
 </style>
 @endpush
 
@@ -84,7 +84,7 @@
 										<option disabled value="" selected>একটি কোর্স নির্বাচন করুন *</option>
 										@foreach ($courses as $course)
 										<option data-offline="{{ $course->type_offline }}" data-online="{{ $course->type_online }}" value="{{ $course->id }}">{{ $course->title }}</option>
-										@endforeach  
+										@endforeach
 									</select>
 									<div class="error-message d-none" id="courseError">
 										<i class="bi bi-info-circle"></i> অবশ্যই কোর্স নির্বাচন করতে হবে !
@@ -139,7 +139,7 @@
 										<div class="payment-process payment-process--bkash" style="display: none;">
 											<div class="payment-process__card">
 												<h3>বিকাশ পার্সোনাল নাম্বার</h3>
-												<h3 class="background-stripe background-stripe--left background-stripe--secondary">01868 752 464</h3>
+												<h3 class="background-stripe background-stripe--left background-stripe--secondary">01992 409 030</h3>
 												<div class="timeline-list mt-5">
 													<div class="timeline-list__item">
 														<div class="timeline-list__item__count">১</div>
@@ -194,7 +194,7 @@
 										<div class="payment-process payment-process--rocket" style="display: none;">
 											<div class="payment-process__card">
 												<h3>রকেট পার্সোনাল নাম্বার</h3>
-												<h3 class="background-stripe background-stripe--left background-stripe--secondary">01868 752 4643</h3>
+												<h3 class="background-stripe background-stripe--left background-stripe--secondary">01992 409 0303</h3>
 												<div class="timeline-list mt-5">
 													<div class="timeline-list__item">
 														<div class="timeline-list__item__count">১</div>
@@ -249,7 +249,7 @@
 										<div class="payment-process payment-process--nagad" style="display: none;">
 											<div class="payment-process__card">
 												<h3>নগদ পার্সোনাল নাম্বার</h3>
-												<h3 class="background-stripe background-stripe--left background-stripe--secondary">01868 752 464</h3>
+												<h3 class="background-stripe background-stripe--left background-stripe--secondary">01992 409 030</h3>
 												<div class="timeline-list mt-5">
 													<div class="timeline-list__item">
 														<div class="timeline-list__item__count">১</div>
@@ -386,7 +386,7 @@
 				$('#bkash_number').prop('disabled', false);
 				$('#bkash_trxID').prop('disabled', false);
 			}else{
-				$(".payment-process--bkash").fadeOut(); 
+				$(".payment-process--bkash").fadeOut();
 			}
 
 			if(currentValue == "payment_method--rocket"){
@@ -398,7 +398,7 @@
 			}
 
 			if(currentValue == "payment_method--nagad"){
-				$(".payment-process--nagad").fadeIn(); 
+				$(".payment-process--nagad").fadeIn();
 				$('#nagad_number').prop('disabled', false);
 				$('#nagad_trxID').prop('disabled', false);
 			}else{
@@ -421,18 +421,18 @@
 			var nagad_number	 = $('#nagad_number');
 			var nagad_trxID		 = $('#nagad_trxID');
 			var errors = [];
-			$('.error-message__payment').addClass('d-none'); 
+			$('.error-message__payment').addClass('d-none');
 
-			var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+			var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 			if(name.val() == ''){
-				$('#nameError').removeClass('d-none');  
-				errors.push('name')   
-			}else{ 
+				$('#nameError').removeClass('d-none');
+				errors.push('name')
+			}else{
 				$('#nameError').addClass('d-none');
-				if(errors.indexOf('name')  != -1){ 
-					errors = errors.filter(item => item !== 'name') 
+				if(errors.indexOf('name')  != -1){
+					errors = errors.filter(item => item !== 'name')
 				}
-			} 
+			}
 			if(phone.val() == ''){
 				$('#phoneError').removeClass('d-none');
 				errors.push('phone');
@@ -444,47 +444,47 @@
 				}else{
 
 					$('#phoneError').addClass('d-none');
-					if(errors.indexOf('phone')  != -1){ 
-						errors = errors.filter(item => item !== 'phone') 
+					if(errors.indexOf('phone')  != -1){
+						errors = errors.filter(item => item !== 'phone')
 					}
 				}
-			} 
+			}
 
 			if(email.val() == ''){
 				$('#emailError').removeClass('d-none');
 				errors.push('email');
 			}else{
 				if(!regex.test(email.val())){
-					$('#emailError').html('<i class="bi bi-info-circle"></i> আপনার ইমেইলটি সঠিক নয় !'); 
-					$('#emailError').removeClass('d-none'); 
+					$('#emailError').html('<i class="bi bi-info-circle"></i> আপনার ইমেইলটি সঠিক নয় !');
+					$('#emailError').removeClass('d-none');
 					errors.push('email');
 				}else{
-					if(errors.indexOf('email')  != -1){ 
-						errors = errors.filter(item => item !== 'email') 
+					if(errors.indexOf('email')  != -1){
+						errors = errors.filter(item => item !== 'email')
 					}
-					$('#emailError').addClass('d-none'); 
+					$('#emailError').addClass('d-none');
 				}
-			}   
+			}
 
-			if(course_id.val() == null){ 
+			if(course_id.val() == null){
 				$('#courseError').removeClass('d-none');
 				errors.push('course_id');
 			}else{
 				$('#courseError').addClass('d-none');
-				if(errors.indexOf('course_id')  != -1){ 
-					errors = errors.filter(item => item !== 'course_id') 
+				if(errors.indexOf('course_id')  != -1){
+					errors = errors.filter(item => item !== 'course_id')
 				}
-			}   
+			}
 
 			if(course_type.val() == null){
 				$('#typeError').removeClass('d-none');
 				errors.push('course_type');
 			}else{
 				$('#typeError').addClass('d-none');
-				if(errors.indexOf('course_type')  != -1){ 
-					errors = errors.filter(item => item !== 'course_type') 
+				if(errors.indexOf('course_type')  != -1){
+					errors = errors.filter(item => item !== 'course_type')
 				}
-			}   
+			}
 			if(payment_method == "payment_method--bkash"){
 				if(bkash_number.val() == ''){
 					$('#bkashNumberError').removeClass('d-none');
@@ -497,20 +497,20 @@
 					}else{
 
 						$('#bkashNumberError').addClass('d-none');
-						if(errors.indexOf('bkash_number')  != -1){ 
-							errors = errors.filter(item => item !== 'bkash_number') 
+						if(errors.indexOf('bkash_number')  != -1){
+							errors = errors.filter(item => item !== 'bkash_number')
 						}
-					} 
-				} 
-				if(bkash_trxID.val() == ''){
-					$('#bkashIdError').removeClass('d-none');  
-					errors.push('bkash_trxID')   
-				}else{ 
-					$('#bkashIdError').addClass('d-none');
-					if(errors.indexOf('bkash_trxID')  != -1){ 
-						errors = errors.filter(item => item !== 'bkash_trxID') 
 					}
-				} 
+				}
+				if(bkash_trxID.val() == ''){
+					$('#bkashIdError').removeClass('d-none');
+					errors.push('bkash_trxID')
+				}else{
+					$('#bkashIdError').addClass('d-none');
+					if(errors.indexOf('bkash_trxID')  != -1){
+						errors = errors.filter(item => item !== 'bkash_trxID')
+					}
+				}
 
 			}
 			else if(payment_method == "payment_method--rocket"){
@@ -525,20 +525,20 @@
 					}else{
 
 						$('#rocketNumberError').addClass('d-none');
-						if(errors.indexOf('rocket_number')  != -1){ 
-							errors = errors.filter(item => item !== 'rocket_number') 
+						if(errors.indexOf('rocket_number')  != -1){
+							errors = errors.filter(item => item !== 'rocket_number')
 						}
-					} 
+					}
 				}
 				if(rocket_trxID.val() == ''){
-					$('#rocketIdError').removeClass('d-none');  
-					errors.push('rocket_trxID')   
-				}else{ 
+					$('#rocketIdError').removeClass('d-none');
+					errors.push('rocket_trxID')
+				}else{
 					$('#rocketIdError').addClass('d-none');
-					if(errors.indexOf('rocket_trxID')  != -1){ 
-						errors = errors.filter(item => item !== 'rocket_trxID') 
+					if(errors.indexOf('rocket_trxID')  != -1){
+						errors = errors.filter(item => item !== 'rocket_trxID')
 					}
-				} 
+				}
 			}
 			else if(payment_method == "payment_method--nagad"){
 				if(nagad_number.val() == ''){
@@ -552,25 +552,25 @@
 					}else{
 
 						$('#nagadNumberError').addClass('d-none');
-						if(errors.indexOf('nagad_number')  != -1){ 
-							errors = errors.filter(item => item !== 'nagad_number') 
+						if(errors.indexOf('nagad_number')  != -1){
+							errors = errors.filter(item => item !== 'nagad_number')
 						}
-					} 
+					}
 				}
 				if(nagad_trxID.val() == ''){
-					$('#nagadIdError').removeClass('d-none');  
-					errors.push('nagad_trxID')   
-				}else{ 
+					$('#nagadIdError').removeClass('d-none');
+					errors.push('nagad_trxID')
+				}else{
 					$('#nagadIdError').addClass('d-none');
-					if(errors.indexOf('nagad_trxID')  != -1){ 
-						errors = errors.filter(item => item !== 'nagad_trxID') 
+					if(errors.indexOf('nagad_trxID')  != -1){
+						errors = errors.filter(item => item !== 'nagad_trxID')
 					}
-				} 
+				}
 			};
 
-			if(errors.length == 0){ 
+			if(errors.length == 0){
 				$('#admissionForm').submit();
-			} else{ 
+			} else{
 				if(errors.includes('name')){
 					name.focus();
 				}else if(errors.includes('email')){
@@ -606,7 +606,7 @@
 			}
 			if(type_online == 'yes'){
 				options += `<option value="অনলাইন">অনলাইন</option>`;
-			} 
+			}
 			$('#course_type').html(options);
 		});
 

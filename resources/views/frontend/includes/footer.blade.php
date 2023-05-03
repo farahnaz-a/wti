@@ -5,13 +5,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-auto text-center text-lg-left mb-4 mb-lg-0">
                     <a class="page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                        <span class="page-logo__text page-logo__text--top d-block"><span class="page-logo__text__icon"><i class="bi bi-code-slash"></i></span>Success Mind</span>						
-                        <span class="page-logo__text page-logo__text--bottom">Institute</span>						
+                        <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
                     </a>
                 </div>
                 <div class="col-lg">
                     <ul class="footer-nav nav justify-content-center">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#!" class="nav-link">
                                 ব্রাউজ কোর্স
                             </a>
@@ -19,6 +18,11 @@
                         <li class="nav-item">
                             <a href="#!" class="nav-link">
                                 আমাদের সম্পর্কে
+                            </a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a href="{{ route('home.index') }}" class="nav-link">
+                                হোম
                             </a>
                         </li>
                         <li class="nav-item">
@@ -31,12 +35,12 @@
                 <div class="col-lg-auto">
                     <ul class="social-nav justify-content-center justify-content-lg-start">
                         <li class="social-nav__item">
-                            <a href="https://www.facebook.com/#" target="_blank" class="social-nav__item__link">
+                            <a href="https://www.facebook.com/successmindinstitute" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-facebook"></i>
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="https://www.youtube.com/#" target="_blank" class="social-nav__item__link">
+                            <a href="https://www.youtube.com/@successmindinstitute" target="_blank" class="social-nav__item__link">
                                 <i class="bi bi-youtube"></i>
                             </a>
                         </li>
@@ -46,7 +50,7 @@
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="mailto:rajiurrahmanraj2021@gmail.com" class="social-nav__item__link">
+                            <a href="mailto:successmindinstitute@gmail.com" class="social-nav__item__link">
                                 <i class="bi bi-envelope"></i>
                             </a>
                         </li>
@@ -57,7 +61,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="footer__bottom py-4">
-                    <p class="footer__copyright text-center mb-0">Copyright © 2022 <a href="{{ route('home.index') }}" class="footer__copyright__link">Success Mind Institute</a>. All right reserved</p>
+                    <p class="footer__copyright text-center mb-0">Copyright © 2023 <a href="{{ route('home.index') }}" class="footer__copyright__link">Success Mind Institute</a>. All right reserved</p>
                 </div>
             </div>
         </div>
@@ -72,7 +76,7 @@
 </div>
 
 @stack('all_modals')
- 
+
 <!-- All Scripts -->
 <script src="{{ asset('assets/frontend/assets/js/jquery-1.12.4.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -102,13 +106,13 @@
 					$('.success-message').html('<i class="bi bi-check-circle"></i>' +response);
                 },
                 error: function(errors){
-                    $('.success-message').addClass('d-none'); 
+                    $('.success-message').addClass('d-none');
 					if(errors.responseJSON.errors['email']){
 						$('.emailError').removeClass('d-none');
 						$('#emailError').text(errors.responseJSON.errors['email']);
 					}else{
 						$('.emailError').addClass('d-none');
-					} 
+					}
                 }
             })
         });

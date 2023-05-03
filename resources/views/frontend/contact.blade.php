@@ -33,7 +33,7 @@
 {{-- Stye  --}}
 @push('css')
 <style>
-    
+
 </style>
 @endpush
 
@@ -55,7 +55,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের একটি ইমেইল পাঠান</h3>
-								<a href="mailto:rajiurrahmanraj2021@gmail.com" class="contact__list__item__text">rajiurrahmanraj2021@gmail.com</a>
+								<a href="mailto:successmindinstitute@gmail.com" class="contact__list__item__text">successmindinstitute@gmail.com</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -81,22 +81,31 @@
 								<i class="bi bi-facebook"></i>
 							</div>
 							<div class="contact__list__item__content">
+								<h3 class="contact__list__item__title">আমাদের ফেসবুক পেইজ</h3>
+								<a href="https://www.facebook.com/successmindinstitute" target="_blank" class="contact__list__item__text">@successmindinstitute</a>
+							</div>
+						</div>
+						<div class="contact__list__item">
+							<div class="contact__list__item__icon contact__list__item__icon--facebook">
+								<i class="bi bi-facebook"></i>
+							</div>
+							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফেসবুক গ্রুপ</h3>
-								<a href="https://www.facebook.com/#" target="_blank" class="contact__list__item__text">#</a>
+								<a href="https://www.facebook.com/groups/successmindinstitute" target="_blank" class="contact__list__item__text">groups/successmindinstitute</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-5 col-lg-6 ml-auto"> 
-					<form action="#!" class="form"> 
-						<div class="success-message success-message__contact d-none">  
+				<div class="col-xl-5 col-lg-6 ml-auto">
+					<form action="#!" class="form">
+						<div class="success-message success-message__contact d-none">
 
 						</div>
 						<h3 class="form-group">আপনার তথ্য দিন</h3>
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<input type="text" name="name" id="name" class="form-control" placeholder="আপনার নাম *" required> 
+									<input type="text" name="name" id="name" class="form-control" placeholder="আপনার নাম *" required>
 									<div class="error-message error-message__contact  d-none nameError">
 										<i class="bi bi-info-circle"></i> <span id="nameError"></span>
 									</div>
@@ -165,7 +174,7 @@
 									<h3 class="faq-card__header__title">Success Mind Institute থেকে কেন আপনি কোর্স করবেন?</h3>
 								</div>
 							</button>
-						
+
 							<div id="faqCollapse1" class="collapse show" data-parent="#faqAccordionParent">
 								<div class="faq-card__body">
 									<ul class="styled-list">
@@ -189,7 +198,7 @@
 									<h3 class="faq-card__header__title">কোর্স শেষে কি সার্টিফিকেট পাবো?</h3>
 								</div>
 							</button>
-							
+
 							<div id="faqCollapse2" class="collapse" data-parent="#faqAccordionParent">
 								<div class="faq-card__body">
 									<p class="faq-card__body__text">কোন কোর্সে ভর্তি হয়ে লেকচার, কুইজ বা এক্সাম সফলভাবে শেষ করার পর অটোমেটিকভাবেই আপনি ঐ কোর্সটির Accomplishment সার্টিফিকেট পাবেন।</p>
@@ -203,7 +212,7 @@
 									<h3 class="faq-card__header__title">সার্টিফিকেট কিভাবে পাবো?</h3>
 								</div>
 							</button>
-							
+
 							<div id="faqCollapse3" class="collapse" data-parent="#faqAccordionParent">
 								<div class="faq-card__body">
 									<p class="faq-card__body__text">কোর্স শেষে আমাদের ওয়েবসাইট থেকে সার্টিফিকেট ডাউনলোড করতে পারবেন। প্রয়োজনে প্রিন্ট করে নিজের কাছে সংরক্ষণ করতেও পারবেন।</p>
@@ -217,7 +226,7 @@
 									<h3 class="faq-card__header__title">কোর্স ভিডিও ডাউনলোড করার কোন অপশন আছে কিনা?</h3>
 								</div>
 							</button>
-							
+
 							<div id="faqCollapse4" class="collapse" data-parent="#faqAccordionParent">
 								<div class="faq-card__body">
 									<p class="faq-card__body__text">না। ভিডিও ডাউনলোড করার কোন অপশন নেই। কোর্সটি করতে অবশ্যই লগইন করে এক্সেস নিতে হবে।</p>
@@ -254,17 +263,17 @@
 					phone 		:phone.val(),
 					category 	:category.val(),
 					message 	:message.val(),
-				}, 
+				},
 				success : function(response){
 					$('.form').trigger('reset');
 					$('.error-message__contact').addClass('d-none');
 					$('.success-message__contact').removeClass('d-none');
 					$('.success-message__contact').html('<i class="bi bi-check-circle"></i>' +response);
-					
+
 				},
-				error : function(errors){  
+				error : function(errors){
 					$('.success-message__contact').addClass('d-none');
-					if(errors.responseJSON.errors['name']){ 
+					if(errors.responseJSON.errors['name']){
 						$('.nameError').removeClass('d-none');
 						$('#nameError').text(errors.responseJSON.errors['name']);
 					}else{
@@ -287,16 +296,16 @@
 
 
             // var errors = [];
-            // var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+            // var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             // if(name.val() == ''){
-            //     $('#nameError').removeClass('d-none'); 
-            //     errors.push('name')   
-            // }else{ 
+            //     $('#nameError').removeClass('d-none');
+            //     errors.push('name')
+            // }else{
             //     $('#nameError').addClass('d-none');
-            //     if(errors.indexOf('name')  != -1){ 
-            //         errors = errors.filter(item => item !== 'name') 
+            //     if(errors.indexOf('name')  != -1){
+            //         errors = errors.filter(item => item !== 'name')
             //     }
-            // } 
+            // }
             // if(phone.val() == ''){
             //     $('#phoneError').removeClass('d-none');
             //     errors.push('phone');
@@ -308,8 +317,8 @@
             //     }else{
 
             //         $('#phoneError').addClass('d-none');
-            //         if(errors.indexOf('phone')  != -1){ 
-            //             errors = errors.filter(item => item !== 'phone') 
+            //         if(errors.indexOf('phone')  != -1){
+            //             errors = errors.filter(item => item !== 'phone')
             //         }
             //     }
             // }
@@ -319,20 +328,20 @@
             //     errors.push('email');
             // }else{
             //     if(!regex.test(email.val())){
-            //         $('#emailError').html('<i class="bi bi-info-circle"></i> আপনার ইমেইলটি সঠিক নয় !'); 
-            //         $('#emailError').removeClass('d-none'); 
+            //         $('#emailError').html('<i class="bi bi-info-circle"></i> আপনার ইমেইলটি সঠিক নয় !');
+            //         $('#emailError').removeClass('d-none');
             //         errors.push('email');
-            //     }else{  
-			// 		if(errors.indexOf('email')  != -1){ 
-			// 			errors = errors.filter(item => item !== 'email') 
+            //     }else{
+			// 		if(errors.indexOf('email')  != -1){
+			// 			errors = errors.filter(item => item !== 'email')
 			// 		}
-			// 		$('#emailError').addClass('d-none');  
-                   
+			// 		$('#emailError').addClass('d-none');
+
             //     }
-            // }             
-			// if(errors.length == 0){  
+            // }
+			// if(errors.length == 0){
 			// 	$('.form').submit();
-			// } 
+			// }
         });
     });
 </script>

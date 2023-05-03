@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	
+
 	<!-- Site Meta Data -->
     <meta name="author" content="Success Mind Institute">
     <meta name="title" content="@yield('title') {{ config('app.name') }}">
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keywords')">
-	<!-- Primary Meta Tags -->   
+	<!-- Primary Meta Tags -->
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
@@ -57,16 +57,16 @@
 			</div>
 		</div>
     </div>
+
 	<!-- Header Section -->
 	<header class="header w-100">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container">
 				<a class="navbar-brand page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-					<span class="page-logo__text page-logo__text--top d-block"><span class="page-logo__text__icon"><i class="bi bi-code-slash"></i></span>Success Mind</span>						
-					<span class="page-logo__text page-logo__text--bottom">Institute</span>						
+                    <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
 				</a>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav text-center mx-auto">
+					{{-- <ul class="navbar-nav text-center mx-auto">
 						<li class="nav-item">
 							<a class="nav-link @yield('homeActive')" href="{{ route('home.index') }}">হোম</a>
 						</li>
@@ -80,14 +80,14 @@
 							<div class="dropdown-menu" aria-labelledby="navbarCourseDropdown">
 								<a class="dropdown-item @yield('courseWebActive')" href="#!">ওয়েব ডিজাইন</a>
 								<a class="dropdown-item @yield('courseDevelopmentActive')" href="#!">ওয়েব ডেভেলপমেন্ট</a>
-								<a class="dropdown-item @yield('courseDesignAdnDevelopmentActive')" href="#!">ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট</a>
+								<a class="dropdown-item @yield('courseDesignAndDevelopmentActive')" href="#!">ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট</a>
 							</div>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link @yield('contactActive')" href="{{ route('home.contact') }}">যোগাযোগ</a>
 						</li>
-					</ul> 
-					@auth 
+					</ul> --}}
+					@auth
 						<ul class="dashboard-nav nav text-center">
 							<li class="nav-item dropdown">
 								<a role="button" class="dashboard-nav__link dropdown-toggle" href="javascript:void(0);" id="navbarDashboardDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -102,19 +102,24 @@
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDashboardDropdown">
-									<a class="dropdown-item @yield('dashboard')" href="{{ route('home.dashboard') }}">আপনার ড্যাশবোর্ড</a> 
+									<a class="dropdown-item @yield('dashboard')" href="{{ route('home.dashboard') }}">আপনার ড্যাশবোর্ড</a>
 									<form action="{{ route('logout') }}" method="POST">
 										@csrf
 										<button type="submit" class="dropdown-item">
-											লগআউট 
+											লগআউট
 										</button>
 									</form>
 								</div>
 							</li>
 						</ul>
 					@else
-						<ul class="action-nav nav text-center">
+						<ul class="action-nav nav text-center ml-lg-auto">
 							<li class="nav-item">
+								<a class="btn btn--secondary bubbles-animation bubbles-animation--secondary @yield('contactActive')" href="{{ route('home.contact') }}">
+									যোগাযোগ
+								</a>
+							</li>
+							{{-- <li class="nav-item">
 								<a class="btn btn--secondary bubbles-animation bubbles-animation--secondary @yield('login')" href="{{ url('/login') }}">
 									লগইন
 								</a>
@@ -123,7 +128,7 @@
 								<a class="btn btn--primary bubbles-animation bubbles-animation--primary @yield('register')" href="{{ url('/register') }}">
 									একাউন্ট তৈরি করুন
 								</a>
-							</li> 
+							</li> --}}
 						</ul>
 					@endauth
 				</div>

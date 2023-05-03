@@ -1,10 +1,10 @@
-@extends('frontend.layouts.app') 
+@extends('frontend.layouts.app')
 
 {{-- Site title  --}}
 @section('title', 'Success Mind Institute')
 
 {{-- Meta Description --}}
-@section('meta_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
+@section('meta_description', 'Develop your professional skills through Success Mind Institute. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Keywords  --}}
 @section('meta_keywords', 'Success-Mind-Institute')
@@ -16,7 +16,7 @@
 @section('fb_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta facebook Description --}}
-@section('fb_description', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
+@section('fb_description', 'Develop your professional skills through Success Mind Institute. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Meta Twitter url  --}}
 @section('twitter_url', 'https://www.successmindinstitute.com/')
@@ -25,7 +25,7 @@
 @section('twitter_title', 'Success Mind Institute - Professional IT Training Institute in Bangladesh')
 
 {{-- Meta Twitter description  --}}
-@section('twitter_desciption', 'Develop your professional skills through SMI. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
+@section('twitter_desciption', 'Develop your professional skills through Success Mind Institute. We provide Graphic Design, Digital Marketing, Web Design & Development, 3d Animation, etc.')
 
 {{-- Footer border --}}
 @section('footer_border', 'border-top-0')
@@ -36,7 +36,7 @@
 {{-- Stye  --}}
 @push('css')
 <style>
-    
+
 </style>
 @endpush
 
@@ -49,10 +49,10 @@
 					<img src="{{ asset('assets/frontend/assets/images/banner/banner.png') }}" alt="banner image" class="banner__image img-fluid" draggable="false">
 				</div>
 				<div class="col-lg-6 pt-3 pt-lg-0 pl-lg-5">
-					<h1 class="banner__title">লক্ষ্য হোক <span class="bubbles-animation bubbles-animation--primary">দক্ষ</span> হওয়া!</h1>
+					<h1 class="banner__title">লক্ষ্য হোক <span class="bubbles-animation bubbles-animation--primary">স্বপ্ন</span> বাস্তবায়ন</h1>
 					<p class="banner__text">অভিজ্ঞ মেন্টর আর আপডেটেড কারিকুলাম নিয়ে সাকসেস মাইন্ড ইনস্টিটিউট প্রস্তুত আপনার ক্যারিয়ার গড়ার অগ্রযাত্রায়। আমাদের ট্রেন্ডি কোর্স থেকে আজই বেছে নিন আপনার পছন্দের কোর্স। এবং ঘরে বসেই নিজের স্কিল ডেভেলপ করুন- সেরা এক্সপার্টদের কাছ থেকে!</p>
-					<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
-						এখনই রেজিস্টার করুন
+					<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="#newsletter-section">
+						আমাদের সাথে থাকুন
 						<i class="bi bi-arrow-up-right"></i>
 					</a>
 				</div>
@@ -102,20 +102,20 @@
 				<div class="col-lg-6 col-md-10">
 					<div class="card">
 						<a class="card__header" href="#!">
-							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="card image" class="card__header__image">
+							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="card image" loading="lazy" class="card__header__image">
 						</a>
 						<div class="card__meta">
 							<a href="#!" class="card__meta__block card__meta__block--category">
-								ওয়েব ডিজাইন
+								ক্যাটেগরি
 							</a>
 							<div class="card__meta__block">
-								কোর্স ফি ১২,০০০ ৳
+								কোর্স ফি ০০ ৳
 							</div>
 						</div>
 						<div class="card__body">
 							<h3 class="card__title">
 								<a href="#!" class="card__title__link">
-									<span class="background-stripe background-stripe--right background-stripe--primary">FLEXBOX</span> Zero to Advanced for Web Designer
+									<span class="background-stripe background-stripe--right background-stripe--primary">শীঘ্রই</span> আসছে
 								</a>
 							</h3>
 							<ul class="rating-list">
@@ -148,7 +148,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-10">
+				{{-- <div class="col-lg-6 col-md-10">
 					<div class="card">
 						<a class="card__header" href="#!">
 							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="card image" class="card__header__image">
@@ -158,7 +158,7 @@
 								ওয়েব ডেভেলপমেন্ট
 							</a>
 							<div class="card__meta__block">
-								কোর্স ফি ১৪,০০০ ৳
+								কোর্স ফি ০০ ৳
 							</div>
 						</div>
 						<div class="card__body">
@@ -207,7 +207,7 @@
 								ডিজাইন ও ডেভেলপমেন্ট
 							</a>
 							<div class="card__meta__block">
-								কোর্স ফি ১৬,০০০ ৳
+								কোর্স ফি ০০ ৳
 							</div>
 						</div>
 						<div class="card__body">
@@ -245,12 +245,12 @@
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</section>
 
-	<!-- Marquee Section -->
+	{{-- <!-- Marquee Section -->
 	<div class="marquee marquee--secondary" role="marquee">
 		<div class="marquee__line">
 			শিক্ষাথীদের মন্তব্য
@@ -325,7 +325,7 @@
 										</svg>
 									</li>
 								</ul>
-								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ব্রাইট স্কিলস এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
 							</div>
 						</div>
 						<div class="testimonial__block">
@@ -366,7 +366,7 @@
 										</svg>
 									</li>
 								</ul>
-								ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। ব্রাইট স্কিলস এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
+								ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। সাকসেস মাইন্ড ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
 								এক কথায় এই প্লে লিস্ট টি ওয়াও, ১ম যে ১৭ মিনিটের ভিডিওটি ছিল ব্যাসিক হলেও ১৭ মিনিটে ১৭ মিনিট ই লাইফে কাজে লাগবে, এবং ভালো কিছু জিনিস শিখতে পেরেছি, আশা করি দিন দিন জটিল সমস্যা সমাধান নিয়ে এগিয়ে আসলে আমরা ও হাল ছাড়ব না কারন এক্সপ্লোর করে ই যাচ্ছি আমরা আর চোখের সামনে সেটাই কেন যেন চলে এসে। সবচেয়ে জোস একটা প্লে লিস্ট বলব আমি এই সিরিজ কে ❤️
 							</div>
 						</div>
@@ -408,7 +408,7 @@
 										</svg>
 									</li>
 								</ul>
-								ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। ব্রাইট স্কিলস এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
+								ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। সাকসেস মাইন্ড ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
 								এক কথায় এই প্লে লিস্ট টি ওয়াও, ১ম যে ১৭ মিনিটের ভিডিওটি ছিল ব্যাসিক হলেও ১৭ মিনিটে ১৭ মিনিট ই লাইফে কাজে লাগবে, এবং ভালো কিছু জিনিস শিখতে পেরেছি, আশা করি দিন দিন জটিল সমস্যা সমাধান নিয়ে এগিয়ে আসলে আমরা ও হাল ছাড়ব না কারন এক্সপ্লোর করে ই যাচ্ছি আমরা আর চোখের সামনে সেটাই কেন যেন চলে এসে। সবচেয়ে জোস একটা প্লে লিস্ট বলব আমি এই সিরিজ কে ❤️
 							</div>
 						</div>
@@ -450,7 +450,7 @@
 										</svg>
 									</li>
 								</ul>
-								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ব্রাইট স্কিলস এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
 							</div>
 						</div>
 						<div class="testimonial__block">
@@ -491,7 +491,7 @@
 										</svg>
 									</li>
 								</ul>
-								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ব্রাইট স্কিলস এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
 							</div>
 						</div>
 						<div class="testimonial__block">
@@ -532,7 +532,7 @@
 										</svg>
 									</li>
 								</ul>
-								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু ব্রাইট স্কিলস এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
+								আমি কয়েকটি লার্নিং প্লাটফর্মে ক্লাস করেছি অনেক সময় প্রাসঙ্গিক কথাকে অনেক দীর্ঘ সময় নিয়ে আলোচনা করায় মূল পয়েন্ট থেকে মনযোগ বিচ্যুত হয়েছে কিন্তু সাকসেস মাইন্ড ইনস্টিটিউট এর কোর্সগুলো একদম মূল বিষয়ের উপর ফোকাস করে তৈরি করা হয়েছে।
 							</div>
 						</div>
 						<div class="testimonial__block">
@@ -573,7 +573,7 @@
 										</svg>
 									</li>
 								</ul>
-								ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। ব্রাইট স্কিলস এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
+								ফ্রিল্যান্সিং নিয়ে আমার তেমন জানা ছিলো না। সাকসেস মাইন্ড ইনস্টিটিউট এর Freelancing with Adobe Illustrator কোর্সটি করে ডিজাইন ও প্রজেক্ট সম্পর্কে ধারণা পেয়েছি। কোর্স শেষে অনলাইন মার্কেটপ্লেসে কাজ করার গাইডলাইন পেয়েছি।
 								এক কথায় এই প্লে লিস্ট টি ওয়াও, ১ম যে ১৭ মিনিটের ভিডিওটি ছিল ব্যাসিক হলেও ১৭ মিনিটে ১৭ মিনিট ই লাইফে কাজে লাগবে, এবং ভালো কিছু জিনিস শিখতে পেরেছি, আশা করি দিন দিন জটিল সমস্যা সমাধান নিয়ে এগিয়ে আসলে আমরা ও হাল ছাড়ব না কারন এক্সপ্লোর করে ই যাচ্ছি আমরা আর চোখের সামনে সেটাই কেন যেন চলে এসে। সবচেয়ে জোস একটা প্লে লিস্ট বলব আমি এই সিরিজ কে ❤️
 							</div>
 						</div>
@@ -581,34 +581,35 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 
-	<!-- Newsletter Section -->
-	@include('frontend.includes.newsletter')
 
 	<!-- Marquee Section -->
 	<div class="marquee marquee--primary" role="marquee">
 		<div class="marquee__line">
-			আমাদের মার্চেন্ট বিকাশ নাম্বার 012 XXXX XXXX
-			<img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
-			আমাদের মার্চেন্ট রকেট নাম্বার 012 XXXX XXXX
+			Success Mind Institute
+            <img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
+			সাকসেস মাইন্ড ইনস্টিটিউট
 			<img src="{{ asset('assets/frontend/assets/images/icons/star--white.svg') }}" alt="shape icon" class="marquee__line__shape">
-			আমাদের মার্চেন্ট বিকাশ নাম্বার 012 XXXX XXXX
+			Success Mind Institute
 			<img src="{{ asset('assets/frontend/assets/images/icons/heart.svg') }}" alt="shape icon" class="marquee__line__shape">
-			আমাদের মার্চেন্ট রকেট নাম্বার 012 XXXX XXXX
+			সাকসেস মাইন্ড ইনস্টিটিউট
 			<img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
 		</div>
-		<div class="marquee__line">
-			আমাদের মার্চেন্ট বিকাশ নাম্বার 012 XXXX XXXX
-			<img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
-			আমাদের মার্চেন্ট রকেট নাম্বার 012 XXXX XXXX
+		<div class="marquee__line" aria-hidden="true">
+			Success Mind Institute
+            <img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
+			সাকসেস মাইন্ড ইনস্টিটিউট
 			<img src="{{ asset('assets/frontend/assets/images/icons/star--white.svg') }}" alt="shape icon" class="marquee__line__shape">
-			আমাদের মার্চেন্ট বিকাশ নাম্বার 012 XXXX XXXX
+			Success Mind Institute
 			<img src="{{ asset('assets/frontend/assets/images/icons/heart.svg') }}" alt="shape icon" class="marquee__line__shape">
-			আমাদের মার্চেন্ট রকেট নাম্বার 012 XXXX XXXX
+			সাকসেস মাইন্ড ইনস্টিটিউট
 			<img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
 		</div>
 	</div>
+
+	<!-- Newsletter Section -->
+	@include('frontend.includes.newsletter')
 @endsection
 
 
