@@ -103,7 +103,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12">
+							{{-- <div class="col-12">
 								<div class="form-group">
 									<label class="form-label">পেমেন্ট মেথড নির্বাচন করুন <span class="text-danger">*</span></label>
 									<div class="row">
@@ -303,11 +303,12 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 							<div class="col-12 text-center">
 								<button type="submit" id="admissionSubmitButton" class="btn btn--primary bubbles-animation bubbles-animation--primary">
 									<i class="bi bi-wallet2"></i>
-									অর্ডার করুন
+									সাবমিট করুন
+									{{-- অর্ডার করুন --}}
 								</button>
 							</div>
 						</div>

@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-auto text-center text-lg-left mb-4 mb-lg-0">
                     <a class="page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                        <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
+                        <img src="{{ asset('assets/frontend/assets/images/logo/logo.png') }}" alt="successmindinstitute" height="60" class="page-logo__image">
                     </a>
                 </div>
                 <div class="col-lg">
@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li class="social-nav__item">
-                            <a href="mailto:successmindinstitute@gmail.com" class="social-nav__item__link">
+                            <a href="mailto:info@successmindinstitute.com" class="social-nav__item__link">
                                 <i class="bi bi-envelope"></i>
                             </a>
                         </li>

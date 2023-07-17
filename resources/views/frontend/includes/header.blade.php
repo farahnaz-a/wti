@@ -63,10 +63,10 @@
 		<nav class="navbar navbar-expand-lg">
 			<div class="container">
 				<a class="navbar-brand page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                    <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
+                    <img src="{{ asset('assets/frontend/assets/images/logo/logo.png') }}" alt="successmindinstitute" height="60" class="page-logo__image">
 				</a>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					{{-- <ul class="navbar-nav text-center mx-auto">
+					<ul class="navbar-nav text-center mx-auto">
 						<li class="nav-item">
 							<a class="nav-link @yield('homeActive')" href="{{ route('home.index') }}">হোম</a>
 						</li>
@@ -78,15 +78,17 @@
 								</span>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarCourseDropdown">
-								<a class="dropdown-item @yield('courseWebActive')" href="#!">ওয়েব ডিজাইন</a>
-								<a class="dropdown-item @yield('courseDevelopmentActive')" href="#!">ওয়েব ডেভেলপমেন্ট</a>
-								<a class="dropdown-item @yield('courseDesignAndDevelopmentActive')" href="#!">ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট</a>
+								@foreach (allCourses() as $all_course)
+									<a class="dropdown-item @yield($all_course->slug)" href="{{ route('home.course.details', $all_course->slug) }}">{{ $all_course->title }}</a>
+								@endforeach
+								{{-- <a class="dropdown-item @yield('courseDevelopmentActive')" href="#!">ওয়েব ডেভেলপমেন্ট</a>
+								<a class="dropdown-item @yield('courseDesignAndDevelopmentActive')" href="#!">ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট</a> --}}
 							</div>
 						</li>
-						<li class="nav-item">
+						{{-- <li class="nav-item">
 							<a class="nav-link @yield('contactActive')" href="{{ route('home.contact') }}">যোগাযোগ</a>
-						</li>
-					</ul> --}}
+						</li> --}}
+					</ul>
 					@auth
 						<ul class="dashboard-nav nav text-center">
 							<li class="nav-item dropdown">

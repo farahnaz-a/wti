@@ -70,10 +70,10 @@
 								<i class="bi bi-shield-lock"></i>
 								<span class="pl-1">পাসওয়ার্ড পরিবর্তন</span>
 							</a>
-							<a class="nav-pills__link" aria-selected="false" data-toggle="pill" href="#v-pills-courses" role="tab">
+							{{-- <a class="nav-pills__link" aria-selected="false" data-toggle="pill" href="#v-pills-courses" role="tab">
 								<i class="bi bi-bag-check"></i>
 								<span class="pl-1">ক্রয়কৃত কোর্স</span>
-							</a>
+							</a> --}}
 						</div>
 					</aside>
 				</div>
@@ -330,7 +330,7 @@
 	</section>
 
 	<!-- Marquee Section -->
-	<div class="marquee marquee--primary" role="marquee">
+	{{-- <div class="marquee marquee--primary" role="marquee">
 		<div class="marquee__line">
 			আমাদের পার্সোনাল বিকাশ নাম্বার 012 XXXX XXXX
 			<img src="{{ asset('assets/frontend/assets/images/icons/star--yellow.svg') }}" alt="shape icon" class="marquee__line__shape">
@@ -347,7 +347,7 @@
 			আমাদের পার্সোনাল নগদ নাম্বার 012 XXXX XXXX
 			<img src="{{ asset('assets/frontend/assets/images/icons/heart.svg') }}" alt="shape icon" class="marquee__line__shape">
 		</div>
-	</div>
+	</div> --}}
 @endsection
 
 @push('js')

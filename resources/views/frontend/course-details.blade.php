@@ -31,7 +31,7 @@
 {{-- @section('footer_border', ' border-top-0') --}}
 
 {{-- Menu Active --}}
-@section('YieldName', 'active')
+@section($course->slug, 'active')
 
 {{-- Stye  --}}
 @push('css')
@@ -48,7 +48,7 @@
 			<div class="container">
 				<div class="row flex-xl-row-reverse">
 					<div class="col-xl-7 mb-5 mb-xl-0">
-						<a data-fancybox href="https://www.youtube.com/embed/VQraviuwbzU" target="_blank" class="services-details__video">
+						<a data-fancybox href="https://www.youtube.com/@successmindinstitute" target="_blank" class="services-details__video">
 							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="course details image" class="services-details__video__poster">
 							<div class="services-details__video__btn">
 								<i class="bi bi-play-fill"></i>
@@ -56,29 +56,29 @@
 						</a>
 					</div>
 					<div class="col-xl-5 text-center text-lg-left">
-						<h3 class="services-details__sub-title d-inline-block">স্ক্র্যাচ থেকে প্রফেশনাল ওয়েবসাইট সাজাতে শিখুন</h3>
-						<h1 class="services-details__title">ওয়েব ডিজাইন</h1>
+						<h3 class="services-details__sub-title d-inline-block">{{ $course->subtitle }}</h3>
+						<h1 class="services-details__title">{{ $course->title }}</h1>
 						<div class="row match-height justify-content-center justify-content-lg-start">
 							<div class="col-md-4 col-sm-6">
 								<div class="services-details__item">
 									<p class="services-details__item__text">কোর্সের মেয়াদ</p>
-									<h4 class="services-details__item__title">৪ মাস</h4>
+									<h4 class="services-details__item__title">{{ $course->course_duration_offline }}</h4>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-6">
 								<div class="services-details__item">
 									<p class="services-details__item__text">লেকচার</p>
-									<h4 class="services-details__item__title">৪৮ টি</h4>
+									<h4 class="services-details__item__title">{{ $course->lecture_amount }} টি</h4>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-6">
 								<div class="services-details__item">
 									<p class="services-details__item__text">প্রজেক্ট</p>
-									<h4 class="services-details__item__title">১০+</h4>
+									<h4 class="services-details__item__title">{{ $course->project_amount ?? 10 }}+</h4>
 								</div>
 							</div>
 						</div>
-						<p class="services-details__text">বিশ্বব্যাপী প্রতি মুহূর্তে তৈরি হচ্ছে হাজার হাজার ওয়েবসাইট। শখের কাজ কিংবা পরিপূর্ণ ব্যবসা সব ধরণের কাজের পরিচয় বহন করে ওয়েবসাইট। এজন্যই ডিজিটাল প্ল্যাটফর্মে ক্যারিয়ার হিসেবে ওয়েব ডিজাইনের বেশ চাহিদা রয়েছে। তাই আপনি যদি <span class="background-stripe background-stripe--left background-stripe--secondary">ওয়েব ডিজাইনার</span> হিসেবে ক্যারিয়ার গড়তে চান, তাহলে আপনার জন্যই আমাদের ওয়েব ডিজাইন কোর্স ।</p>
+						<p class="services-details__text">{!! $course->description !!}</p>
 						<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 							কোর্সটি কিনুন
 							<i class="bi bi-arrow-up-right"></i>
@@ -124,8 +124,8 @@
 									</li>
 								</ul>
 								<ul class="styled-list my-4">
-									<li class="styled-list__item">১২+ ভিডিও</li>
-									<li class="styled-list__item">৩০+ কুইজ</li>
+									<li class="styled-list__item">প্রতিটি ক্লাসের ভিডিও</li>
+									{{-- <li class="styled-list__item">৩০+ কুইজ</li> --}}
 									<li class="styled-list__item">প্রোজেক্ট বেসড টিউটোরিয়াল</li>
 									<li class="styled-list__item">ফ্রিল্যান্সিং গাইডলাইন</li>
 									<li class="styled-list__item">মার্কেটপ্লেস সম্পর্কে পর্যাপ্ত ধারনা</li>
@@ -134,7 +134,7 @@
 								</ul>
 								<div class="services-details__card__block">
 									<h4 class="services-details__card__block__title">কোর্স ফী (অফলাইন)</h4>
-									<h3 class="mb-3"><span class="background-stripe background-stripe--left background-stripe--secondary">৳ ১২,০০০ টাকা</span></h3>
+									<h3 class="mb-3"><span class="background-stripe background-stripe--left background-stripe--secondary">৳ {{ $course->course_discount_offline }} টাকা</span></h3>
 									<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 										কোর্সটি কিনুন
 										<i class="bi bi-arrow-up-right"></i>
@@ -142,7 +142,7 @@
 								</div>
 								<div class="services-details__card__block mb-0">
 									<h4 class="services-details__card__block__title">কোর্স ফী (অনলাইন)</h4>
-									<h3 class="mb-3"><span class="background-stripe background-stripe--right background-stripe--primary">৳ ৮,০০০ টাকা</span></h3>
+									<h3 class="mb-3"><span class="background-stripe background-stripe--right background-stripe--primary">৳ {{ $course->course_discount_online }} টাকা</span></h3>
 									<a class="btn btn--secondary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 										কোর্সটি কিনুন
 										<i class="bi bi-arrow-up-right"></i>
@@ -155,23 +155,25 @@
 						<div class="mb-5 pb-3">
 							<h3 class="services-details__body__title mb-4"><span class="background-stripe background-stripe--left background-stripe--danger px-1 ml-0">#</span> এই কোর্স থেকে কী কী শিখবেন?</h3>
 							<ul class="styled-list pl-1">
-								<li class="styled-list__item">আকর্ষণীয় Website তৈরির Basic Knowledge এবং CSS3 সম্পর্কে বিস্তারিত ধারণা </li>
-								<li class="styled-list__item">HTML5 সম্পর্কে Details Idea, HTML5 ব্যবহার করে Basic Web Page তৈরি</li>
+								@foreach (explode('--', $course->feature) as $feature)
+									<li class="styled-list__item">{{ $feature }}</li>
+								@endforeach
+								{{-- <li class="styled-list__item">HTML5 সম্পর্কে Details Idea, HTML5 ব্যবহার করে Basic Web Page তৈরি</li>
 								<li class="styled-list__item">ওয়েব পেজের LayOut ডিজাইন এবং Slider তৈরি </li>
 								<li class="styled-list__item">ওয়েব সাইটের Image Insert পদ্ধতি </li>
 								<li class="styled-list__item">CSS3 ব্যবহার করে Styling Web Page তৈরি</li>
 								<li class="styled-list__item">UI /UX কে HTML এ কনভার্ট করার পদ্ধতি </li>
 								<li class="styled-list__item">কাঠামোগত Project তৈরি সম্পর্কে বিস্তারিত আইডিয়া </li>
-								<li class="styled-list__item">ওয়েব ডিজাইন শিখে Freelancing শুরু করার ধাপসমূহ </li>
+								<li class="styled-list__item">ওয়েব ডিজাইন শিখে Freelancing শুরু করার ধাপসমূহ </li> --}}
 							</ul>
 						</div>
-						<div class="mb-5 pb-3">
+						{{-- <div class="mb-5 pb-3">
 							<a href="#!" target="_blank" class="services-details__body__card custom-cursor">
 								<img src="{{ asset('assets/frontend/assets/images/icons/files.png') }}" alt="card image" class="services-details__body__card__image">
 								<h3 class="services-details__body__card__title">কোর্স <span class="background-stripe background-stripe--left background-stripe--secondary">কারিকুলাম</span></h3>
 								<p class="services-details__body__card__text">ডাউনলোড করতে ক্লিক করুন</p>
 							</a>
-						</div>
+						</div> --}}
 						<div class="mb-5 pb-3">
 							<h3 class="services-details__body__title mb-4"><span class="background-stripe background-stripe--left background-stripe--danger px-1 ml-0">#</span> এই কোর্স শেষে যেসব মার্কেটপ্লেসে কাজ করতে পারবেন</h3>
 							<p>স্কিল অর্জন করে লোকাল মার্কেটে কাজের সুযোগ আছে। অনলাইনে গ্লোবাল মার্কেটেও কাজ করতে পারবেন। Fiverr, Upwork, Freelancer, Peopleperhour এর মতো গ্লোবাল মার্কেটপ্লেসে Freelancing করতে পারবেন। </p>
@@ -236,7 +238,7 @@
 	</section>
 
 	<!-- Testimonial Section -->
-	<section class="testimonial section-gap">
+	{{-- <section class="testimonial section-gap">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 section-header text-center">
@@ -538,7 +540,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 @endsection
 
 @push('js')

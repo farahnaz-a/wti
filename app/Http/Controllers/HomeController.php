@@ -19,7 +19,8 @@ class HomeController extends Controller
 
     // home page 
     public function index(){
-        return view('frontend.index');
+        $courses = Course::all();
+        return view('frontend.index', compact('courses'));
     }
 
     // Contact page
@@ -98,13 +99,14 @@ class HomeController extends Controller
 
     // Admission store 
     public function admissionStore(Request $request){
+        // dd($request->all());
         $request->validate([
             'name'              => 'required',
             'email'             => 'required|email',
             'phone'             => 'required', 
             'course_id'         => 'required', 
             'course_type'       => 'required', 
-            'payment_method'    => 'required',  
+            // 'payment_method'    => 'required',  
         ]);
 
         $user = User::where('email', $request->email)->first();
@@ -115,7 +117,7 @@ class HomeController extends Controller
                 'phone' => $request->phone,
                 'password' => bcrypt($request->phone),
             ]);
-            Mail::to($request->email)->send(new RegisterMail($request->email, $request->phone));
+            // Mail::to($request->email)->send(new RegisterMail($request->email, $request->phone));
         }
         
         Auth::login($user);
@@ -149,9 +151,9 @@ class HomeController extends Controller
             'payment_trx_id'    => $payment_trx_id,
         ]);
 
-        Mail::to($request->email)->send(new AdmissionMail());
+        // Mail::to($request->email)->send(new AdmissionMail());
 
-        return to_route('dashboard');
+        return to_route('home.dashboard');
 
     }
 
@@ -163,8 +165,11 @@ class HomeController extends Controller
 
     // Course details 
     public function courseDetails($slug){
-        $course = Course::where('id', $slug)->first();
-        return view('frontend.course-details', compact('course'));
+        $course = Course::where('slug', $slug)->first(); 
+        if($course){
+            return view('frontend.course-details', compact('course'));
+        }
+        abort(404);
     }
 
     // Dashboard 
