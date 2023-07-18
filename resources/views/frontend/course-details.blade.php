@@ -49,7 +49,7 @@
 				<div class="row flex-xl-row-reverse">
 					<div class="col-xl-7 mb-5 mb-xl-0">
 						<a data-fancybox href="https://www.youtube.com/@successmindinstitute" target="_blank" class="services-details__video">
-							<img src="{{ asset('assets/frontend/assets/images/course/course-banner.jpg') }}" alt="course details image" class="services-details__video__poster">
+							<img src="{{ asset('uploads/courses') }}/{{ $course->feature_video_thumbnail }}" alt="course details image" class="services-details__video__poster">
 							<div class="services-details__video__btn">
 								<i class="bi bi-play-fill"></i>
 							</div>
@@ -134,7 +134,7 @@
 								</ul>
 								<div class="services-details__card__block">
 									<h4 class="services-details__card__block__title">কোর্স ফী (অফলাইন)</h4>
-									<h3 class="mb-3"><span class="background-stripe background-stripe--left background-stripe--secondary">৳ {{ $course->course_discount_offline }} টাকা</span></h3>
+									<h3 class="mb-3"><span class="background-stripe background-stripe--left background-stripe--secondary">৳ {{ $course->course_fee_offline }} টাকা</span></h3>
 									<a class="btn btn--primary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 										কোর্সটি কিনুন
 										<i class="bi bi-arrow-up-right"></i>
@@ -142,7 +142,7 @@
 								</div>
 								<div class="services-details__card__block mb-0">
 									<h4 class="services-details__card__block__title">কোর্স ফী (অনলাইন)</h4>
-									<h3 class="mb-3"><span class="background-stripe background-stripe--right background-stripe--primary">৳ {{ $course->course_discount_online }} টাকা</span></h3>
+									<h3 class="mb-3"><span class="background-stripe background-stripe--right background-stripe--primary">৳ {{ $course->course_fee_online }} টাকা</span></h3>
 									<a class="btn btn--secondary bubbles-animation bubbles-animation--primary" href="{{ route('home.admission') }}">
 										কোর্সটি কিনুন
 										<i class="bi bi-arrow-up-right"></i>

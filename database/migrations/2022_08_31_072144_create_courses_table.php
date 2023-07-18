@@ -22,6 +22,7 @@ return new class extends Migration
             $table->longText('feature')->nullable();
             $table->integer('category_id');
             $table->string('feature_image');
+            $table->string('feature_video_thumbnail')->nullable();
             $table->string('feature_video')->nullable();
             $table->string('lecture_amount');
             $table->string('exam_amount');

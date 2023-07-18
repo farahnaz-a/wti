@@ -103,14 +103,14 @@
 					<div class="col-lg-6 col-md-10">
 						<div class="card">
 							<a class="card__header" href="{{ route('home.course.details', $course->slug) }}">
-								<img src="{{ asset('courses') }}/{{ $course->feature_image }}" alt="card image" loading="lazy" class="card__header__image">
+								<img src="{{ asset('uploads/courses') }}/{{ $course->feature_image }}" alt="card image" loading="lazy" class="card__header__image">
 							</a>
 							<div class="card__meta">
 								<a href="{{ route('home.course.details', $course->slug) }}" class="card__meta__block card__meta__block--category">
 									{{ $course->title }}
 								</a>
 								<div class="card__meta__block">
-									কোর্স ফি {{ $course->course_discount_offline }} ৳
+									কোর্স ফি {{ $course->course_fee_offline }} ৳
 								</div>
 							</div>
 							<div class="card__body">
