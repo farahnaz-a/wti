@@ -152,7 +152,7 @@
                                             </svg>
                                         </li>
                                     </ul>
-                                    <a class="btn btn--primary bubbles-animation bubbles-animation--primary align-self-start" href="http://localhost:8000/admission">
+                                    <a class="btn btn--primary bubbles-animation bubbles-animation--primary align-self-start" href="{{ route('home.admission') }}">
                                         কোর্সটি কিনুন
                                         <i class="bi bi-arrow-up-right"></i>
                                     </a>
