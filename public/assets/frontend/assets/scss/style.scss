@@ -1,4 +1,4 @@
-/* 
+/*
 ------------------
 Template Name: Success Mind Institute | Online Training Institute
 Version: 1.00
@@ -8,6 +8,7 @@ Version: 1.00
 @import "./abstracts/variable";
 @import "./abstracts/mixin";
 @import "./abstracts/function";
+@import "./base/common";
 @import "./base/typography";
 @import "./abstracts/extend";
 @import "./components/preloader";
@@ -16,6 +17,10 @@ Version: 1.00
 @import "./components/accordions";
 @import "./components/cards";
 @import "./components/pills";
-@import "./base/common";
 @import "./layout/header";
 @import "./layout/footer";
+@import "./sections/banners";
+@import "./sections/services";
+@import "./sections/testimonial";
+@import "./pages/dashboard";
+@import "./pages/errors";

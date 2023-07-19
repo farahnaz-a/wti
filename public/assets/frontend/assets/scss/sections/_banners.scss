@@ -1,0 +1,38 @@
+/* Banner Section Style */
+.banner{
+	@extend %section-shape;
+	background-color: $color-white--off;
+	padding: 6rem 0;
+	@include desktop{
+		padding: 3rem 0 5rem;
+	}
+	&__image{
+		@include desktop{
+			max-height: toRem(200);
+		}
+	}
+	&__title{
+		font-family: $font-secondary;
+		@include min-desktop-lg{
+			font-size: toEm(60);
+		}
+	}
+	&__text{
+		margin: toRem(10) 0 toRem(20);
+		@include min-tablet{
+			font-size: toEm(20);
+		}
+	}
+}
+
+/* Sub Banner Section Style */
+.sub-banner{
+	@extend %section-shape;
+	background-color: $color-cream;
+	padding: 6rem 0 7rem;
+	&__title{
+		font-family: $font-secondary;
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+}

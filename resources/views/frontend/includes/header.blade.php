@@ -39,7 +39,7 @@
 
 	<!-- All CSS -->
 	<link rel="stylesheet" href="{{ asset("assets/frontend/assets/plugins/bootstrap/css/bootstrap.min.css") }}">
-	<link rel="stylesheet" href="{{ asset("assets/frontend/assets/css/style.css") }}">
+	<link rel="stylesheet" href="{{ asset("assets/frontend/assets/css/style.min.css") }}">
 
 	@stack('css')
 </head>
@@ -63,7 +63,7 @@
 		<nav class="navbar navbar-expand-lg">
 			<div class="container">
 				<a class="navbar-brand page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                    <img src="{{ asset('assets/frontend/assets/images/logo/logo.png') }}" alt="successmindinstitute" height="60" class="page-logo__image">
+                    <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
 				</a>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav text-center mx-auto">
@@ -81,8 +81,6 @@
 								@foreach (allCourses() as $all_course)
 									<a class="dropdown-item @yield($all_course->slug)" href="{{ route('home.course.details', $all_course->slug) }}">{{ $all_course->title }}</a>
 								@endforeach
-								{{-- <a class="dropdown-item @yield('courseDevelopmentActive')" href="#!">ওয়েব ডেভেলপমেন্ট</a>
-								<a class="dropdown-item @yield('courseDesignAndDevelopmentActive')" href="#!">ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট</a> --}}
 							</div>
 						</li>
 						{{-- <li class="nav-item">
@@ -115,7 +113,7 @@
 							</li>
 						</ul>
 					@else
-						<ul class="action-nav nav text-center ml-lg-auto">
+						<ul class="action-nav nav text-center">
 							<li class="nav-item">
 								<a class="btn btn--secondary bubbles-animation bubbles-animation--secondary @yield('contactActive')" href="{{ route('home.contact') }}">
 									যোগাযোগ

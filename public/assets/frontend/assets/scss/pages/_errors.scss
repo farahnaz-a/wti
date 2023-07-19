@@ -1,0 +1,21 @@
+/* Error Section Style */
+.error{
+	&__image{
+		max-width: 100%;
+		max-height: toRem(500);
+	}
+	&__title{
+		color: $color-secondary;
+		font-weight: 700;
+		text-shadow: 0.05em 0.05em 0 $color-ash;
+		font-size: toRem(100);
+	}
+	&__sub-title{
+		font-size: toRem(28);
+		font-weight: 600;
+	}
+	&__text{
+		font-size: toRem(16);
+		margin: toRem(20) 0;
+	}
+}

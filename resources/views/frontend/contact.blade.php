@@ -55,7 +55,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের একটি ইমেইল পাঠান</h3>
-								<a href="mailto:successmindinstitute@gmail.com" class="contact__list__item__text">successmindinstitute@gmail.com</a>
+								<a href="mailto:info@successmindinstitute.com" class="contact__list__item__text">info@successmindinstitute.com</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -175,7 +175,7 @@
 								</div>
 							</button>
 
-							<div id="faqCollapse1" class="collapse show" data-parent="#faqAccordionParent">
+							<div id="faqCollapse1" class="collapse show">
 								<div class="faq-card__body">
 									<ul class="styled-list">
 										<li class="styled-list__item">অভিজ্ঞ মেন্টর দিয়ে পরিচালিত প্রতিটি কোর্স তৈরি।</li>
@@ -185,8 +185,8 @@
 										<li class="styled-list__item">হাতে কলমে প্র্যাক্টিস করার জন্য অসাধারণ প্রজেক্ট আছে আমাদের প্রায় প্রতিটি কোর্সেই।</li>
 										<li class="styled-list__item">নিজেকে যাচাই করার জন্য আছে একাধিক এক্সাম দেয়ার ব্যবস্থা।</li>
 										<li class="styled-list__item">প্রতিটি লেকচার অনেক বেশি ইনফরমেটিভ এবং একইসাথে ইন্টারেক্টিভ, যা আপনার মনোযোগ ধরে রাখতে হেল্পফুল</li>
-										<li class="styled-list__item">প্রতিটি কোর্স ক্যারিয়ার ডেভেলপমেন্টের ক্ষেত্রে সহায়ক। </li>
-										<li class="styled-list__item">কোর্স ফি আপনার সাধ্যের মধ্যে। </li>
+										<li class="styled-list__item">প্রতিটি কোর্স ক্যারিয়ার ডেভেলপমেন্টের ক্ষেত্রে সহায়ক।</li>
+										<li class="styled-list__item">কোর্স ফি আপনার সাধ্যের মধ্যে।</li>
 									</ul>
 								</div>
 							</div>
@@ -199,7 +199,7 @@
 								</div>
 							</button>
 
-							<div id="faqCollapse2" class="collapse" data-parent="#faqAccordionParent">
+							<div id="faqCollapse2" class="collapse">
 								<div class="faq-card__body">
 									<p class="faq-card__body__text">কোন কোর্সে ভর্তি হয়ে লেকচার, কুইজ বা এক্সাম সফলভাবে শেষ করার পর অটোমেটিকভাবেই আপনি ঐ কোর্সটির Accomplishment সার্টিফিকেট পাবেন।</p>
 								</div>
@@ -213,7 +213,7 @@
 								</div>
 							</button>
 
-							<div id="faqCollapse3" class="collapse" data-parent="#faqAccordionParent">
+							<div id="faqCollapse3" class="collapse">
 								<div class="faq-card__body">
 									<p class="faq-card__body__text">কোর্স শেষে আমাদের ওয়েবসাইট থেকে সার্টিফিকেট ডাউনলোড করতে পারবেন। প্রয়োজনে প্রিন্ট করে নিজের কাছে সংরক্ষণ করতেও পারবেন।</p>
 								</div>
@@ -227,7 +227,7 @@
 								</div>
 							</button>
 
-							<div id="faqCollapse4" class="collapse" data-parent="#faqAccordionParent">
+							<div id="faqCollapse4" class="collapse">
 								<div class="faq-card__body">
 									<p class="faq-card__body__text">না। ভিডিও ডাউনলোড করার কোন অপশন নেই। কোর্সটি করতে অবশ্যই লগইন করে এক্সেস নিতে হবে।</p>
 								</div>
@@ -236,7 +236,7 @@
 					</div>
 				</div>
 				<div class="col-12 text-center pt-5">
-					<img src="{{ asset('assets/frontend/assets/images/illustrations/contact_us.png') }}" alt="Contact Image" class="img-fluid">
+					<img src="{{ asset('assets/frontend/assets/images/illustrations/contact_us.png') }}" alt="Contact Image" loading="lazy" class="img-fluid">
 				</div>
 			</div>
 		</div>
