@@ -99,7 +99,6 @@ class HomeController extends Controller
 
     // Admission store 
     public function admissionStore(Request $request){
-        dd($request->all());
         $request->validate([
             'name'              => 'required',
             'email'             => 'required|email',
