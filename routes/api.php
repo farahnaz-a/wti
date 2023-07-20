@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('courses', [CourseController::class, 'index']);
 Route::get('course/{id}/details', [CourseController::class, 'details']);
+Route::post('course-register', [CourseController::class, 'courseRegister']);
