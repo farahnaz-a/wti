@@ -23,6 +23,14 @@ class CourseController extends Controller
 
     public function courseRegister(Request $request){
 
+        $request->validate([
+            'name'              => 'required',
+            'email'             => 'required|email',
+            'phone'             => 'required', 
+            'course_id'         => 'required', 
+            'course_type'       => 'required', 
+        ]);
+
         $user = User::where('email', $request->email)->first();
         if(!$user){
             $user = User::create([
@@ -39,7 +47,7 @@ class CourseController extends Controller
             'email'             => $request->email,
             'phone'             => $request->phone,
             'course_id'         => $request->course_id,
-            'course_type'       => $request->course_type, 
+            'course_type'       => $request->course_type == 0 ? 'অফলাইন':'অনলাইন', 
         ]);
 
         return response()->json(['status' => 'success'], 200);
