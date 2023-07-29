@@ -32,7 +32,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset("assets/frontend/assets/images/favicon/apple-touch-icon.png") }}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset("assets/frontend/assets/images/favicon/favicon-32x32.png") }}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset("assets/frontend/assets/images/favicon/favicon-16x16.png") }}">
-	<link rel="icon" type="image/x-icon" href="{{ asset("assets/frontend/assets/images/favicon/favicon.ico") }}">
+	<link rel="icon" type="image/x-icon" href="{{ asset('uploads/settings/favicon') }}/{{ settings()->favicon }}">
 
 	<!-- Site Title -->
 	<title>@yield('title') {{ config('app.name') }}</title>
@@ -63,7 +63,7 @@
 		<nav class="navbar navbar-expand-lg">
 			<div class="container">
 				<a class="navbar-brand page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                    <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
+                    <img src="{{ asset('uploads/settings/logo') }}/{{ settings()->logo }}" alt="successmindinstitute" height="60" class="page-logo__image">
 				</a>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav text-center mx-auto">

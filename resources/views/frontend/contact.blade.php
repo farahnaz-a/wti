@@ -55,7 +55,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের একটি ইমেইল পাঠান</h3>
-								<a href="mailto:info@successmindinstitute.com" class="contact__list__item__text">info@successmindinstitute.com</a>
+								<a href="mailto:{{ $setting->email }}" class="contact__list__item__text">{{ $setting->email }}</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -64,7 +64,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফোন নাম্বার</h3>
-								<a href="tel:01643390112" class="contact__list__item__text">016 4339 0112</a>
+								<a href="tel:{{ str_replace(' ', '', $setting->phone) }}" class="contact__list__item__text">{{ $setting->phone }}</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -73,7 +73,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের হোয়াটসঅ্যাপ নাম্বার</h3>
-								<a href="tel:01643390112" class="contact__list__item__text">016 4339 0112</a>
+								<a href="tel:{{ str_replace(' ', '', $setting->whatsapp_number) }}" class="contact__list__item__text">{{ $setting->whatsapp_number }}</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -82,7 +82,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফেসবুক পেইজ</h3>
-								<a href="https://www.facebook.com/successmindinstitute" target="_blank" class="contact__list__item__text">@successmindinstitute</a>
+								<a href="{{ $setting->facebook_page_link }}" target="_blank" class="contact__list__item__text">{{ $setting->facebook_page_name }}</a>
 							</div>
 						</div>
 						<div class="contact__list__item">
@@ -91,7 +91,7 @@
 							</div>
 							<div class="contact__list__item__content">
 								<h3 class="contact__list__item__title">আমাদের ফেসবুক গ্রুপ</h3>
-								<a href="https://www.facebook.com/groups/successmindinstitute" target="_blank" class="contact__list__item__text">groups/successmindinstitute</a>
+								<a href="{{ $setting->facebook_group_link }}" target="_blank" class="contact__list__item__text">{{ $setting->facebook_group_name }}</a>
 							</div>
 						</div>
 					</div>
@@ -167,31 +167,34 @@
 				</div>
 				<div class="col-12">
 					<div class="accordion" id="faqAccordionParent">
-						<div class="faq-card">
-							<button class="faq-card__header" type="button" data-toggle="collapse" data-target="#faqCollapse1" aria-expanded="true">
-								<div class="faq-card__header__container">
-									<div class="faq-card__header__icon"></div>
-									<h3 class="faq-card__header__title">Success Mind Institute থেকে কেন আপনি কোর্স করবেন?</h3>
-								</div>
-							</button>
+						@foreach ($faqs as $faq)
+							<div class="faq-card">
+								<button class="faq-card__header {{ $loop->first ? '':'collapsed' }}" type="button" data-toggle="collapse" data-target="#faqCollapse{{ $faq->id }}" aria-expanded="{{ $loop->first ? 'true':'false' }}">
+									<div class="faq-card__header__container">
+										<div class="faq-card__header__icon"></div>
+										<h3 class="faq-card__header__title">{{ $faq->question }}</h3>
+									</div>
+								</button>
 
-							<div id="faqCollapse1" class="collapse show">
-								<div class="faq-card__body">
-									<ul class="styled-list">
-										<li class="styled-list__item">অভিজ্ঞ মেন্টর দিয়ে পরিচালিত প্রতিটি কোর্স তৈরি।</li>
-										<li class="styled-list__item">আপডেটেড কারিকুলাম ফলো করে তৈরি প্রতিটি রেকর্ডেড ভিডিও কোর্স।</li>
-										<li class="styled-list__item">জব ওরিয়েন্টেড কোর্স মডিউল।</li>
-										<li class="styled-list__item">কোর্স রিলেটেড প্রতিটি বিষয় সহজ ও সুন্দরভাবে ব্যাখ্যা করা হয়।</li>
-										<li class="styled-list__item">হাতে কলমে প্র্যাক্টিস করার জন্য অসাধারণ প্রজেক্ট আছে আমাদের প্রায় প্রতিটি কোর্সেই।</li>
-										<li class="styled-list__item">নিজেকে যাচাই করার জন্য আছে একাধিক এক্সাম দেয়ার ব্যবস্থা।</li>
-										<li class="styled-list__item">প্রতিটি লেকচার অনেক বেশি ইনফরমেটিভ এবং একইসাথে ইন্টারেক্টিভ, যা আপনার মনোযোগ ধরে রাখতে হেল্পফুল</li>
-										<li class="styled-list__item">প্রতিটি কোর্স ক্যারিয়ার ডেভেলপমেন্টের ক্ষেত্রে সহায়ক।</li>
-										<li class="styled-list__item">কোর্স ফি আপনার সাধ্যের মধ্যে।</li>
-									</ul>
+								<div id="faqCollapse{{ $faq->id }}" class="collapse {{ $loop->first ? 'show':'' }}">
+									<div class="faq-card__body">
+										{!! $faq->answer !!}
+										{{-- <ul class="styled-list">
+											<li class="styled-list__item">অভিজ্ঞ মেন্টর দিয়ে পরিচালিত প্রতিটি কোর্স তৈরি।</li>
+											<li class="styled-list__item">আপডেটেড কারিকুলাম ফলো করে তৈরি প্রতিটি রেকর্ডেড ভিডিও কোর্স।</li>
+											<li class="styled-list__item">জব ওরিয়েন্টেড কোর্স মডিউল।</li>
+											<li class="styled-list__item">কোর্স রিলেটেড প্রতিটি বিষয় সহজ ও সুন্দরভাবে ব্যাখ্যা করা হয়।</li>
+											<li class="styled-list__item">হাতে কলমে প্র্যাক্টিস করার জন্য অসাধারণ প্রজেক্ট আছে আমাদের প্রায় প্রতিটি কোর্সেই।</li>
+											<li class="styled-list__item">নিজেকে যাচাই করার জন্য আছে একাধিক এক্সাম দেয়ার ব্যবস্থা।</li>
+											<li class="styled-list__item">প্রতিটি লেকচার অনেক বেশি ইনফরমেটিভ এবং একইসাথে ইন্টারেক্টিভ, যা আপনার মনোযোগ ধরে রাখতে হেল্পফুল</li>
+											<li class="styled-list__item">প্রতিটি কোর্স ক্যারিয়ার ডেভেলপমেন্টের ক্ষেত্রে সহায়ক।</li>
+											<li class="styled-list__item">কোর্স ফি আপনার সাধ্যের মধ্যে।</li>
+										</ul> --}}
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="faq-card">
+						@endforeach
+						{{-- <div class="faq-card">
 							<button class="faq-card__header collapsed" type="button" data-toggle="collapse" data-target="#faqCollapse2" aria-expanded="false">
 								<div class="faq-card__header__container">
 									<div class="faq-card__header__icon"></div>
@@ -232,7 +235,7 @@
 									<p class="faq-card__body__text">না। ভিডিও ডাউনলোড করার কোন অপশন নেই। কোর্সটি করতে অবশ্যই লগইন করে এক্সেস নিতে হবে।</p>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 				<div class="col-12 text-center pt-5">

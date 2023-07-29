@@ -10,6 +10,8 @@ use App\Models\Subscriber;
 use App\Mail\AdmissionMail;
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
+use App\Models\Faq;
+use App\Models\GeneralSetting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -25,7 +27,9 @@ class HomeController extends Controller
 
     // Contact page
     public function contact(){
-        return view('frontend.contact');
+        $setting = GeneralSetting::first();
+        $faqs = Faq::all();
+        return view('frontend.contact', compact('setting', 'faqs'));
     }
 
     // Contact message store

@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-auto text-center text-lg-left mb-4 mb-lg-0">
                     <a class="page-logo bubbles-animation bubbles-animation--primary" href="{{ route('home.index') }}">
-                        <img src="{{ asset('assets/frontend/assets/images/logo/logo.svg') }}" alt="successmindinstitute" height="60" class="page-logo__image">
+                        <img src="{{ asset('uploads/settings/logo') }}/{{ settings()->logo }}" alt="successmindinstitute" height="60" class="page-logo__image">
                     </a>
                 </div>
                 <div class="col-lg">
