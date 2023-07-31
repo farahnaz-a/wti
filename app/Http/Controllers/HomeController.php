@@ -241,6 +241,11 @@ class HomeController extends Controller
 
     }
 
+    // Privacy and policy 
+    public function privacyPolicy(){
+        return view('frontend.privacy-policy');
+    }
+
 
     // END
 }

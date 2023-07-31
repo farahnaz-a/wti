@@ -45,6 +45,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/dashboard', 'dashboard')->name('home.dashboard')->middleware('auth');
     Route::post('/dashboard/update', 'infoUdate')->name('home.info.update')->middleware('auth');
     Route::post('/dashboard/password/update', 'passwordUdate')->name('home.password.update')->middleware('auth');
+    Route::get('privacy-policy', 'privacyPolicy')->name('privacy.policy');
 });
 
 
